@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AfroConnect</string>
+    <string name="title_activity_main">AfroConnect</string>
+    <string name="package_name">com.lightiam.afroconnect</string>
+    <string name="custom_url_scheme">com.lightiam.afroconnect</string>
+    <string name="app_description">Connect with African food vendors and diaspora customers globally</string>
+    <string name="app_long_description">AfroConnect is a comprehensive mobile app connecting African food vendors with diaspora customers globally. Find authentic Nigerian cuisine and products, connect with verified vendors, and enjoy international shipping with real-time order tracking.</string>
+</resources>

@@ -26,7 +26,7 @@
                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#mycart" aria-controls="mycart" class="link-dark">
                   <div class="bg-dark bg-opacity-75 rounded-circle user-icon"><i class="bi bi-basket d-flex m-0 h5 text-white"></i></div>
                </a>
-               <a class="toggle hc-nav-trigger hc-nav-1" href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation" >
+               <a class="toggle hc-nav-trigger hc-nav-1" href="#" data-bs-toggle="offcanvas" data-bs-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation" >
                <b class="bg-dark bg-opacity-75 rounded-circle user-icon">
                <i class="bi bi-list d-flex m-0 h4 text-white"></i>
                </b>
@@ -47,7 +47,7 @@
                      <a class="navbar-brand m-0 d-lg-block flex-shrink-0" href="index.html">
                      <img src="img/logo/afroconnect_logo.svg" alt="" class="img-fluid logo-img">
                      </a>
-                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                     <button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                   </div>
                   <div class="d-block d-lg-none">
                      <form action="#">
@@ -132,7 +132,7 @@
       <p class="mb-0">The Suya skewers were amazing! Perfectly spiced and the meat was tender. Shipping was fast and everything arrived in good condition.</p>
    </div>
    <div class="d-grid gap-2 mt-3">
-      <button class="btn btn-outline-primary" type="button">View All Reviews</button>
+      <button class="btn btn-outline-primary">View All Reviews</button>
    </div>
 </div>
    <h6 class="fw-bold text-dark mb-3">Vendor Verification</h6>
@@ -339,7 +339,7 @@
                         <div class="accordion" id="accordionExample">
                            <div class="accordion-item overflow-hidden border-0">
                               <h6 class="accordion-header" id="headingOne">
-                                 <button class="accordion-button text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                 <button class="accordion-button text-dark bg-white" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                  Categories
                                  </button>
                               </h6>
@@ -404,7 +404,7 @@
                            </div>
                            <div class="accordion-item  overflow-hidden border-0">
                               <h6 class="accordion-header border-top" id="headingTwo">
-                                 <button class="accordion-button text-dark bg-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                 <button class="accordion-button text-dark bg-white collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                  Sort by
                                  </button>
                               </h6>
@@ -754,7 +754,7 @@
                            </div>
                         </div>
                         <div class="col-lg-8 p-4">
-                           <button type="button" class="btn-close float-end shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                           <button class="btn-close float-end shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                            <div class="mb-4 pe-5">
                               <h6 class="fw-bold text-danger mb-1">Phone Number Verification</h6>
                            </div>
@@ -851,7 +851,7 @@
          <div class="offcanvas offcanvas-end my-cart-width" tabindex="-1" id="mycart">
             <div class="offcanvas-header px-4 py-3">
                <h5 class="offcanvas-title fw-bold">My Cart</h5>
-               <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+               <button class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body p-0">
                <div class="bg-light px-4 py-3">
@@ -870,9 +870,9 @@
                         <div class="d-flex align-items-center justify-content-between">
                            <h6 class="fw-bold m-0"><del class="text-muted small fw-normal">$55</del><br>$50</h6>
                            <div class="input-group border rounded overflow-hidden value">
-                              <input type="button" value="-" class="button-minus btn btn-light btn-sm border-end col" data-field="quantity">
+                              <button class="button-minus btn btn-light btn-sm border-end col" data-field="quantity">-</button>
                               <input type="text" value="1" name="quantity" class="quantity-field form-control form-control-sm col text-center shadow-none border-0">
-                              <input type="button" value="+" class="button-plus btn btn-light btn-sm border-start col" data-field="quantity">
+                              <button class="button-plus btn btn-light btn-sm border-start col" data-field="quantity">+</button>
                            </div>
                         </div>
                      </div>
@@ -890,9 +890,9 @@
                         <div class="d-flex align-items-center justify-content-between">
                            <h6 class="fw-bold m-0"><del class="text-muted small fw-normal">$25</del><br>$20</h6>
                            <div class="input-group border rounded overflow-hidden value">
-                              <input type="button" value="-" class="button-minus btn btn-light btn-sm border-end col" data-field="quantity">
+                              <button class="button-minus btn btn-light btn-sm border-end col" data-field="quantity">-</button>
                               <input type="text" value="1" name="quantity" class="quantity-field form-control form-control-sm col text-center shadow-none border-0">
-                              <input type="button" value="+" class="button-plus btn btn-light btn-sm border-start col" data-field="quantity">
+                              <button class="button-plus btn btn-light btn-sm border-start col" data-field="quantity">+</button>
                            </div>
                         </div>
                      </div>
@@ -910,9 +910,9 @@
                         <div class="d-flex align-items-center justify-content-between">
                            <h6 class="fw-bold m-0"><del class="text-muted small fw-normal">$65</del><br>$60</h6>
                            <div class="input-group border rounded overflow-hidden value">
-                              <input type="button" value="-" class="button-minus btn btn-light btn-sm border-end col" data-field="quantity">
+                              <button class="button-minus btn btn-light btn-sm border-end col" data-field="quantity">-</button>
                               <input type="text" value="1" name="quantity" class="quantity-field form-control form-control-sm col text-center shadow-none border-0">
-                              <input type="button" value="+" class="button-plus btn btn-light btn-sm border-start col" data-field="quantity">
+                              <button class="button-plus btn btn-light btn-sm border-start col" data-field="quantity">+</button>
                            </div>
                         </div>
                      </div>
@@ -947,7 +947,7 @@
          <div class="offcanvas offcanvas-end my-cart-width" tabindex="-1" id="myaddress">
             <div class="offcanvas-header px-4 py-3">
                <h5 class="offcanvas-title fw-bold" id="myaddressLabel">My Address</h5>
-               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+               <button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body p-0">
                <div class="bg-light">
@@ -1014,7 +1014,7 @@
             >
             <div class="offcanvas-header px-4 py-3">
                <h5 class="offcanvas-title fw-bold">My Cart</h5>
-               <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+               <button class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body p-0">
                <div class="bg-light px-4 py-3">
@@ -1033,9 +1033,9 @@
                         <div class="d-flex align-items-center justify-content-between">
                            <h6 class="fw-bold m-0"><del class="text-muted small fw-normal">$55</del><br>$50</h6>
                            <div class="input-group border rounded overflow-hidden value">
-                              <input type="button" value="-" class="button-minus btn btn-light btn-sm border-end col" data-field="quantity">
+                              <button class="button-minus btn btn-light btn-sm border-end col" data-field="quantity">-</button>
                               <input type="text" value="1" name="quantity" class="quantity-field form-control form-control-sm col text-center shadow-none border-0">
-                              <input type="button" value="+" class="button-plus btn btn-light btn-sm border-start col" data-field="quantity">
+                              <button class="button-plus btn btn-light btn-sm border-start col" data-field="quantity">+</button>
                            </div>
                         </div>
                      </div>
@@ -1053,9 +1053,9 @@
                         <div class="d-flex align-items-center justify-content-between">
                            <h6 class="fw-bold m-0"><del class="text-muted small fw-normal">$25</del><br>$20</h6>
                            <div class="input-group border rounded overflow-hidden value">
-                              <input type="button" value="-" class="button-minus btn btn-light btn-sm border-end col" data-field="quantity">
+                              <button class="button-minus btn btn-light btn-sm border-end col" data-field="quantity">-</button>
                               <input type="text" value="1" name="quantity" class="quantity-field form-control form-control-sm col text-center shadow-none border-0">
-                              <input type="button" value="+" class="button-plus btn btn-light btn-sm border-start col" data-field="quantity">
+                              <button class="button-plus btn btn-light btn-sm border-start col" data-field="quantity">+</button>
                            </div>
                         </div>
                      </div>
@@ -1073,9 +1073,9 @@
                         <div class="d-flex align-items-center justify-content-between">
                            <h6 class="fw-bold m-0"><del class="text-muted small fw-normal">$65</del><br>$60</h6>
                            <div class="input-group border rounded overflow-hidden value">
-                              <input type="button" value="-" class="button-minus btn btn-light btn-sm border-end col" data-field="quantity">
+                              <button class="button-minus btn btn-light btn-sm border-end col" data-field="quantity">-</button>
                               <input type="text" value="1" name="quantity" class="quantity-field form-control form-control-sm col text-center shadow-none border-0">
-                              <input type="button" value="+" class="button-plus btn btn-light btn-sm border-start col" data-field="quantity">
+                              <button class="button-plus btn btn-light btn-sm border-start col" data-field="quantity">+</button>
                            </div>
                         </div>
                      </div>
@@ -1125,7 +1125,7 @@
                            </div>
                         </div>
                         <div class="col-lg-6 p-4">
-                           <button type="button" class="btn-close float-end shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                           <button class="btn-close float-end shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                            <div class="mb-3 pe-5">
                               <h5 class="fw-bold mb-1">Enter complete address</h5>
                               <p class="text-muted small m-0">This allow us to find you easily and give you timely delivery experience </p>
