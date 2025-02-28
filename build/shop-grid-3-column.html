@@ -18,10 +18,13 @@
       <div class="d-flex align-items-center gap-3 p-3 bg-primary inner-page-heaer">
          <button onclick="window.location.href='index.html';" class="text-white border-0 bg-transparent p-0"><i class="bi bi-arrow-left fs-5"></i></button>
          <div>
-            <h6 class="fw-bold text-white mb-0">Frequently asked questions</h6>
-            <p class="text-white-50 small m-0">AfroConnect</p>
+            <h6 class="fw-bold text-white mb-0">Snaks & Munchies</h6>
+            <p class="text-white-50 small m-0">Dairy, Bread & Eggs</p>
          </div>
          <div class="d-flex align-items-center gap-2 ms-auto">
+            <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" class="link-dark" class="border-0 bg-transparent p-0">
+               <div class="bg-dark bg-opacity-75 rounded-circle user-icon"><i class="bi bi-funnel d-flex m-0 h5 text-white"></i></div>
+            </button>
             <button data-bs-toggle="offcanvas" data-bs-target="#mycart" class="link-dark" class="border-0 bg-transparent p-0">
                <div class="bg-dark bg-opacity-75 rounded-circle user-icon"><i class="bi bi-basket d-flex m-0 h5 text-white"></i></div>
             </button>
@@ -213,275 +216,253 @@
             </div>
          </nav>
          <!-- body -->
-         <section class="py-3">
+         <section class="osahan-listing border-top">
             <div class="container">
-               <div class="row">
-                  <div class="col-lg-7 mx-auto">
-                     <div class="accordion accordion-flush osahan-faq" id="accordionFlushExample">
-                        <!-- General -->
-                        <div class="accordion-item border rounded-4 overflow-hidden mb-3">
-                           <h2 class="accordion-header" id="flush-headingOne">
-                              <button class="accordion-button collapsed fw-bold" data-bs-toggle="collapse"
-                                 data-bs-target="#flush-collapseOne">
-                              General
-                              </button>
-                           </h2>
-                           <div id="flush-collapseOne" class="accordion-collapse collapse"
-                              data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body border-top p-0">
-                                 <!-- General Inner Accordion -->
-                                 <div class="accordion accordion-flush" id="accordionFlushExample1">
-                                    <!-- 1st -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingOneOne">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseOneOne"
-                                            >
-                                          What is AfroConnect and why was the name changed?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseOneOne" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample1">
-                                          <div class="accordion-body border-top">
-                                             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English
-                                          </div>
-                                       </div>
+               <div class="row m-0">
+                  <div class="col-lg-9 p-0">
+                     <div class="tab-content border-start bg-white" id="v-pills-tabContent">
+                        <!-- snaks & munchies -->
+                        <div id="v-pills-snaks" role="tabpanel" tabindex="0">
+                           <div class="d-flex align-items-center justify-content-between p-3 border-bottom border-end">
+                              <h5 class="fw-bold m-0">Item 34</h5>
+                              <div class="d-flex align-items-center gap-3">
+                                 <a class="fs-6 text-muted" href="shop-list.html"><i class="bi bi-list-task d-flex"></i></button>
+                                 <a class="fs-6 text-muted" href="listing.html"><i class="bi bi-grid d-flex"></i></button>
+                                 <a class="fs-6" href="shop-grid-3-column.html"><i class="bi bi-grid-3x3-gap d-flex"></i></button>
+                              </div>
+                           </div>
+                           <!-- chips -->
+                           <div class="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-2 g-0">
+                              <div class="col border-end border-bottom">
+                                 <div class="card bg-transparent border-0 rounded-0 h-100 osahan-card-list">
+                                    <button onclick="window.location.href='product-detail.html';" class="border-0 bg-transparent p-0"><img src="img/list/[^"]*" alt="" class="card-img-top"></button>
+                                    <div class="card-body pt-0">
+                                       <p class="card-text text-muted mb-1 small">Snaks & Munchies</p>
+                                       <h6 class="card-title fw-bold text-truncate">AfroConnect Indian's Magic Masala
+                                          AfroConnect Chips - Pack of 2
+                                       </h6>
+                                       <p class="text-muted small m-0">2 x 90g</p>
                                     </div>
-                                    <!-- 2nd -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingOneTwo">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseOneTwo"
-                                            >
-                                          What kind of products does AfroConnect sell?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseOneTwo" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample1">
-                                          <div class="accordion-body border-top">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
-                                       </div>
+                                    <div
+                                       class="card-footer bg-transparent border-0 d-flex align-items-end justify-content-between pt-0 pb-3">
+                                       <h6 class="fw-bold m-0"><del
+                                          class="text-muted small fw-normal">$100</del><br>$88
+                                       </h6>
+                                       <a data-bs-toggle="offcanvas" data-bs-target="#mycart" class="btn btn-outline-danger btn-sm rounded-3 fw-bold px-4 osahan-new-btn">ADD</button>
                                     </div>
-                                    <!-- 3rd -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingOneThree">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseOneThree"
-                                            >
-                                          What cities and locations does AfroConnect operate in?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseOneThree" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample1">
-                                          <div class="accordion-body border-top">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
-                                       </div>
+                                 </div>
+                              </div>
+                              <div class="col border-end border-bottom">
+                                 <div class="card bg-transparent border-0 rounded-0 h-100 osahan-card-list">
+                                    <button onclick="window.location.href='product-detail.html';" class="border-0 bg-transparent p-0"><img src="img/list/[^"]*" alt="" class="card-img-top"></button>
+                                    <div class="card-body pt-0">
+                                       <p class="card-text text-muted mb-1 small">Snaks & Munchies</p>
+                                       <h6 class="card-title fw-bold text-truncate">AfroConnect Masala Much Crips -
+                                          Pack of 2
+                                       </h6>
+                                       <p class="text-muted small m-0">2 x 80g</p>
+                                    </div>
+                                    <div
+                                       class="card-footer bg-transparent border-0 d-flex align-items-end justify-content-between pt-0 pb-3">
+                                       <h6 class="fw-bold m-0"><del
+                                          class="text-muted small fw-normal">$40</del><br>$39
+                                       </h6>
+                                       <a data-bs-toggle="offcanvas" data-bs-target="#mycart" class="btn btn-outline-danger btn-sm rounded-3 fw-bold px-4 osahan-new-btn">ADD</button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col border-end border-bottom">
+                                 <div class="card bg-transparent border-0 rounded-0 h-100 osahan-card-list">
+                                    <button onclick="window.location.href='product-detail.html';" class="border-0 bg-transparent p-0"><img src="img/list/[^"]*" alt="" class="card-img-top"></button>
+                                    <div class="card-body pt-0">
+                                       <p class="card-text text-muted mb-1 small">Snaks & Munchies</p>
+                                       <h6 class="card-title fw-bold text-truncate">Bingo Tedhe Medhe Masala
+                                          AfroConnect Nigerian Cassava Chips - Pack of 2
+                                       </h6>
+                                       <p class="text-muted small m-0">2 x 85g</p>
+                                    </div>
+                                    <div
+                                       class="card-footer bg-transparent border-0 d-flex align-items-end justify-content-between pt-0 pb-3">
+                                       <h6 class="fw-bold m-0"><del
+                                          class="text-muted small fw-normal">$40</del><br>$32
+                                       </h6>
+                                       <a data-bs-toggle="offcanvas" data-bs-target="#mycart" class="btn btn-outline-danger btn-sm rounded-3 fw-bold px-4 osahan-new-btn">ADD</button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col border-end border-bottom">
+                                 <div class="card bg-transparent border-0 rounded-0 h-100 osahan-card-list">
+                                    <button onclick="window.location.href='product-detail.html';" class="border-0 bg-transparent p-0"><img src="img/list/[^"]*" alt="" class="card-img-top"></button>
+                                    <div class="card-body pt-0">
+                                       <p class="card-text text-muted mb-1 small">Snaks & Munchies</p>
+                                       <h6 class="card-title fw-bold text-truncate">AfroConnect Cripz Herb & Onion
+                                          AfroConnect Yam Chips - Pack of 2
+                                       </h6>
+                                       <p class="text-muted small m-0">2 x 47g</p>
+                                    </div>
+                                    <div
+                                       class="card-footer bg-transparent border-0 d-flex align-items-end justify-content-between pt-0 pb-3">
+                                       <h6 class="fw-bold m-0"><del
+                                          class="text-muted small fw-normal">$45</del><br>$39
+                                       </h6>
+                                       <a data-bs-toggle="offcanvas" data-bs-target="#mycart" class="btn btn-outline-danger btn-sm rounded-3 fw-bold px-4 osahan-new-btn">ADD</button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col border-end border-bottom">
+                                 <div class="card bg-transparent border-0 rounded-0 h-100 osahan-card-list">
+                                    <button onclick="window.location.href='product-detail.html';" class="border-0 bg-transparent p-0"><img src="img/list/[^"]*" alt="" class="card-img-top"></button>
+                                    <div class="card-body pt-0">
+                                       <p class="card-text text-muted mb-1 small">Snaks & Munchies</p>
+                                       <h6 class="card-title fw-bold text-truncate">Haldira's Navratan Mixture
+                                          Namkeen
+                                       </h6>
+                                       <p class="text-muted small m-0">440 g</p>
+                                    </div>
+                                    <div
+                                       class="card-footer bg-transparent border-0 d-flex align-items-end justify-content-between pt-0 pb-3">
+                                       <h6 class="fw-bold m-0"><del
+                                          class="text-muted small fw-normal">$108</del><br>$99
+                                       </h6>
+                                       <a data-bs-toggle="offcanvas" data-bs-target="#mycart" class="btn btn-outline-danger btn-sm rounded-3 fw-bold px-4 osahan-new-btn">ADD</button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col border-end border-bottom">
+                                 <div class="card bg-transparent border-0 rounded-0 h-100 osahan-card-list">
+                                    <button onclick="window.location.href='product-detail.html';" class="border-0 bg-transparent p-0"><img src="img/list/[^"]*" alt="" class="card-img-top"></button>
+                                    <div class="card-body pt-0">
+                                       <p class="card-text text-muted mb-1 small">Snaks & Munchies</p>
+                                       <h6 class="card-title fw-bold text-truncate">Haldiram's Bhujia</h6>
+                                       <p class="text-muted small m-0">400 g</p>
+                                    </div>
+                                    <div
+                                       class="card-footer bg-transparent border-0 d-flex align-items-end justify-content-between pt-0 pb-3">
+                                       <h6 class="fw-bold m-0"><del
+                                          class="text-muted small fw-normal">$111</del><br>$103
+                                       </h6>
+                                       <a data-bs-toggle="offcanvas" data-bs-target="#mycart" class="btn btn-outline-danger btn-sm rounded-3 fw-bold px-4 osahan-new-btn">ADD</button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col border-end border-bottom">
+                                 <div class="card bg-transparent border-0 rounded-0 h-100 osahan-card-list">
+                                    <button onclick="window.location.href='product-detail.html';" class="border-0 bg-transparent p-0"><img src="img/list/[^"]*" alt="" class="card-img-top"></button>
+                                    <div class="card-body pt-0">
+                                       <p class="card-text text-muted mb-1 small">Snaks & Munchies</p>
+                                       <h6 class="card-title fw-bold text-truncate">Haldiram's Aloo Bhujia</h6>
+                                       <p class="text-muted small m-0">100 g</p>
+                                    </div>
+                                    <div
+                                       class="card-footer bg-transparent border-0 d-flex align-items-end justify-content-between pt-0 pb-3">
+                                       <h6 class="fw-bold m-0"><del
+                                          class="text-muted small fw-normal">$32</del><br>$29
+                                       </h6>
+                                       <a data-bs-toggle="offcanvas" data-bs-target="#mycart" class="btn btn-outline-danger btn-sm rounded-3 fw-bold px-4 osahan-new-btn">ADD</button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col border-end border-bottom">
+                                 <div class="card bg-transparent border-0 rounded-0 h-100 osahan-card-list">
+                                    <button onclick="window.location.href='product-detail.html';" class="border-0 bg-transparent p-0"><img src="img/list/[^"]*" alt="" class="card-img-top"></button>
+                                    <div class="card-body pt-0">
+                                       <p class="card-text text-muted mb-1 small">Snaks & Munchies</p>
+                                       <h6 class="card-title fw-bold text-truncate">Haldiram's Monng Dal
+                                          Namkeen
+                                       </h6>
+                                       <p class="text-muted small m-0">400 g</p>
+                                    </div>
+                                    <div
+                                       class="card-footer bg-transparent border-0 d-flex align-items-end justify-content-between pt-0 pb-3">
+                                       <h6 class="fw-bold m-0"><del
+                                          class="text-muted small fw-normal">$115</del><br>$106
+                                       </h6>
+                                       <a data-bs-toggle="offcanvas" data-bs-target="#mycart" class="btn btn-outline-danger btn-sm rounded-3 fw-bold px-4 osahan-new-btn">ADD</button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col border-end border-bottom">
+                                 <div class="card bg-transparent border-0 rounded-0 h-100 osahan-card-list">
+                                    <button onclick="window.location.href='product-detail.html';" class="border-0 bg-transparent p-0"><img src="img/list/[^"]*" alt="" class="card-img-top"></button>
+                                    <div class="card-body pt-0">
+                                       <p class="card-text text-muted mb-1 small">Snaks & Munchies</p>
+                                       <h6 class="card-title fw-bold text-truncate">Act ll Golden Sizzle
+                                          Popcorn (pressure Cooker)
+                                       </h6>
+                                       <p class="text-muted small m-0">30 g</p>
+                                    </div>
+                                    <div
+                                       class="card-footer bg-transparent border-0 d-flex align-items-end justify-content-between pt-0 pb-3">
+                                       <h6 class="fw-bold m-0"><del
+                                          class="text-muted small fw-normal">$12</del><br>$10
+                                       </h6>
+                                       <a data-bs-toggle="offcanvas" data-bs-target="#mycart" class="btn btn-outline-danger btn-sm rounded-3 fw-bold px-4 osahan-new-btn">ADD</button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col border-end border-bottom">
+                                 <div class="card bg-transparent border-0 rounded-0 h-100 osahan-card-list">
+                                    <button onclick="window.location.href='product-detail.html';" class="border-0 bg-transparent p-0"><img src="img/list/[^"]*" alt="" class="card-img-top"></button>
+                                    <div class="card-body pt-0">
+                                       <p class="card-text text-muted mb-1 small">Snaks & Munchies</p>
+                                       <h6 class="card-title fw-bold text-truncate">Act ll Ready To Eat Caremal
+                                          Bliss Popcern
+                                       </h6>
+                                       <p class="text-muted small m-0">70 g</p>
+                                    </div>
+                                    <div
+                                       class="card-footer bg-transparent border-0 d-flex align-items-end justify-content-between pt-0 pb-3">
+                                       <h6 class="fw-bold m-0"><del
+                                          class="text-muted small fw-normal">$65</del><br>$49
+                                       </h6>
+                                       <a data-bs-toggle="offcanvas" data-bs-target="#mycart" class="btn btn-outline-danger btn-sm rounded-3 fw-bold px-4 osahan-new-btn">ADD</button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col border-end border-bottom">
+                                 <div class="card bg-transparent border-0 rounded-0 h-100 osahan-card-list">
+                                    <button onclick="window.location.href='product-detail.html';" class="border-0 bg-transparent p-0"><img src="img/list/[^"]*" alt="" class="card-img-top"></button>
+                                    <div class="card-body pt-0">
+                                       <p class="card-text text-muted mb-1 small">Instant & Frozen Food</p>
+                                       <h6 class="card-title fw-bold text-truncate">Keya Hot U Sour Vegetable
+                                          Soup
+                                       </h6>
+                                       <p class="text-muted small m-0">52 g</p>
+                                    </div>
+                                    <div
+                                       class="card-footer bg-transparent border-0 d-flex align-items-end justify-content-between pt-0 pb-3">
+                                       <h6 class="fw-bold m-0"><del
+                                          class="text-muted small fw-normal">$40</del><br>$29
+                                       </h6>
+                                       <a data-bs-toggle="offcanvas" data-bs-target="#mycart" class="btn btn-outline-danger btn-sm rounded-3 fw-bold px-4 osahan-new-btn">ADD</button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col border-end border-bottom">
+                                 <div class="card bg-transparent border-0 rounded-0 h-100 osahan-card-list">
+                                    <button onclick="window.location.href='product-detail.html';" class="border-0 bg-transparent p-0"><img src="img/list/[^"]*" alt="" class="card-img-top"></button>
+                                    <div class="card-body pt-0">
+                                       <p class="card-text text-muted mb-1 small">Instant & Frozen Food</p>
+                                       <h6 class="card-title fw-bold text-truncate">Bimbino Tomato Soup
+                                       </h6>
+                                       <p class="text-muted small m-0">50 g</p>
+                                    </div>
+                                    <div
+                                       class="card-footer bg-transparent border-0 d-flex align-items-end justify-content-between pt-0 pb-3">
+                                       <h6 class="fw-bold m-0"><del
+                                          class="text-muted small fw-normal">$40</del><br>$30
+                                       </h6>
+                                       <a data-bs-toggle="offcanvas" data-bs-target="#mycart" class="btn btn-outline-danger btn-sm rounded-3 fw-bold px-4 osahan-new-btn">ADD</button>
                                     </div>
                                  </div>
                               </div>
                            </div>
                         </div>
-                        <!-- Miscellaneous -->
-                        <div class="accordion-item border rounded-4 overflow-hidden mb-3">
-                           <h2 class="accordion-header" id="flush-headingTwo">
-                              <button class="accordion-button collapsed fw-bold" data-bs-toggle="collapse"
-                                 data-bs-target="#flush-collapseTwo">
-                              Miscellaneous
-                              </button>
-                           </h2>
-                           <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                              data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body border-top p-0">
-                                 <!-- Miscellaneous inner accordion -->
-                                 <div class="accordion accordion-flush" id="accordionFlushExample2">
-                                    <!-- 1st -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingTwoOne">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseTwoOne"
-                                            >
-                                          Does AfroConnect deliver cigarettes?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseTwoOne" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample2">
-                                          <div class="accordion-body border-top">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
-                                       </div>
-                                    </div>
-                                    <!-- 2nd -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingTwoTwo">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseTwoTwo"
-                                            >
-                                          Does AfroConnect deliver sanitary pads?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseTwoTwo" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample2">
-                                          <div class="accordion-body border-top">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
-                                       </div>
-                                    </div>
-                                    <!-- 3rd -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingTwoThree">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseTwoThree"
-                                            >
-                                          Does AfroConnect deliver condoms?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseTwoThree" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample2">
-                                          <div class="accordion-body border-top">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
-                                       </div>
-                                    </div>
-                                    <!-- 4rth -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingTwoFour">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseTwoFour"
-                                            >
-                                          Does AfroConnect deliver 24 hours/all night?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseTwoFour" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample2">
-                                          <div class="accordion-body border-top">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
-                                       </div>
-                                    </div>
-                                    <!-- 5rth -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingTwoFive">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseTwoFive"
-                                            >
-                                          Does AfroConnect deliver ice cream?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseTwoFive" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample2">
-                                          <div class="accordion-body border-top">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
-                                       </div>
-                                    </div>
-                                    <!-- 6th -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingTwoSix">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseTwoSix"
-                                            >
-                                          How does AfroConnect deliver in 10 minutes?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseTwoSix" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample2">
-                                          <div class="accordion-body border-top">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <!-- Delivery -->
-                        <div class="accordion-item border rounded-4 overflow-hidden mb-3">
-                           <h2 class="accordion-header" id="flush-headingThree">
-                              <button class="accordion-button collapsed fw-bold" data-bs-toggle="collapse"
-                                 data-bs-target="#flush-collapseThree">
-                              Delivery
-                              </button>
-                           </h2>
-                           <div id="flush-collapseThree" class="accordion-collapse collapse"
-                              data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body border-top p-0">
-                                 <!-- delivery inner accordion -->
-                                 <div class="accordion accordion-flush" id="accordionFlushExample3">
-                                    <!-- 1st -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingThreeOne">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseThreeOne"
-                                            >
-                                          Do you charge for delivery?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseThreeOne" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample3">
-                                          <div class="accordion-body border-top">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
-                                       </div>
-                                    </div>
-                                    <!-- 2nd -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingThreeTwo">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseThreeTwo"
-                                            >
-                                          What are your delivery timings?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseThreeTwo" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample3">
-                                          <div class="accordion-body border-top">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
-                                       </div>
-                                    </div>
-                                    <!-- 3rd -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingThreeThree">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseThreeThree"
-                                            >
-                                          Can I change the delivery address of my order?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseThreeThree" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample3">
-                                          <div class="accordion-body border-top">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="accordion-item border rounded-4 overflow-hidden">
-                           <h2 class="accordion-header" id="flush-headingFour">
-                              <button class="accordion-button collapsed fw-bold" data-bs-toggle="collapse"
-                                 data-bs-target="#flush-collapseFour">
-                              Cancellation and return
-                              </button>
-                           </h2>
-                           <div id="flush-collapseFour" class="accordion-collapse collapse"
-                              data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body border-top p-0">
-                                 <!-- Cancellation and return inner accordion -->
-                                 <div class="accordion accordion-flush" id="accordionFlushExample4">
-                                    <!-- 1st -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingFourOne">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseFourOne"
-                                            >
-                                          How can I cancel my order?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseFourOne" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample4">
-                                          <div class="accordion-body border-top">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
-                                       </div>
-                                    </div>
-                                    <!-- 2nd -->
-                                    <div class="accordion-item">
-                                       <h2 class="accordion-header" id="flush-headingFourTwo">
-                                          <button class="accordion-button collapsed" data-bs-toggle="collapse"
-                                             data-bs-target="#flush-collapseFourTwo"
-                                            >
-                                          What If I want to return something?
-                                          </button>
-                                       </h2>
-                                       <div id="flush-collapseFourTwo" class="accordion-collapse collapse"
-                                          data-bs-parent="#accordionFlushExample4">
-                                          <div class="accordion-body border-top">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
+                     </div>
+                     <!-- pagination -->
+                     <div class="d-flex justify-content-center border-start border-end py-4">
+                        <div class="spinner-border" role="status">
+                           <span class="visually-hidden">Loading...</span>
                         </div>
                      </div>
                   </div>
@@ -659,7 +640,7 @@
          <div class="offcanvas offcanvas-end my-cart-width" tabindex="-1" id="mycart">
             <div class="offcanvas-header px-4 py-3">
                <h5 class="offcanvas-title fw-bold">My Cart</h5>
-               <button class="btn-close shadow-none" data-bs-dismiss="offcanvas"></button>
+               <button  class="btn-close shadow-none" data-bs-dismiss="offcanvas"></button>
             </div>
             <div class="offcanvas-body p-0">
                <div class="bg-light px-4 py-3">
@@ -822,7 +803,7 @@
             >
             <div class="offcanvas-header px-4 py-3">
                <h5 class="offcanvas-title fw-bold">My Cart</h5>
-               <button class="btn-close shadow-none" data-bs-dismiss="offcanvas"></button>
+               <button  class="btn-close shadow-none" data-bs-dismiss="offcanvas"></button>
             </div>
             <div class="offcanvas-body p-0">
                <div class="bg-light px-4 py-3">
@@ -982,6 +963,198 @@
                      </div>
                   </div>
                </div>
+            </div>
+         </div>
+         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+               <h5 class="offcanvas-title" id="offcanvasRightLabel">Filter</h5>
+               <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body p-0">
+               <div class="p-0 border-start osahan-listing-page-nav-sidebar">
+                  <div class="sticky-sidebar bg-white overflow-hidden">
+                     <div class="p-3">
+                        <h6 class="fw-bold m-0">Categories</h6>
+                     </div>
+                     <div class="nav flex-column nav-pills border-bottom" id="v-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <button class="nav-link mb-3 active" id="v-pills-bread-tab" data-bs-toggle="pill"
+                           data-bs-target="#v-pills-bread" role="tab"
+                           aria-selected="true">
+                        <span class="d-flex align-items-center gap-3">
+                        <img src="img/listing-1.png" alt="" class="img-fluid rounded">
+                        <b class="m-0 fw-normal">Dairy, Bread & Eggs</b>
+                        </span>
+                        </button>
+                        <button class="nav-link mb-3" id="v-pills-snaks-tab" data-bs-toggle="pill"
+                           data-bs-target="#v-pills-snaks" role="tab" 
+                           aria-selected="false">
+                        <span class="d-flex align-items-center gap-3">
+                        <img src="img/listing-2.png" alt="" class="img-fluid rounded">
+                        <b class="m-0 fw-normal">Snaks & Munchies</b>
+                        </span>
+                        </button>
+                        <button class="nav-link mb-3" id="v-pills-cold-drink-tab" data-bs-toggle="pill"
+                           data-bs-target="#v-pills-cold-drink" role="tab"
+                           aria-selected="false">
+                        <span class="d-flex align-items-center gap-3">
+                        <img src="img/listing-3.png" alt="" class="img-fluid rounded">
+                        <b class="m-0 fw-normal">Cold Drink & Juices</b>
+                        </span>
+                        </button>
+                        <button class="nav-link mb-3" id="v-pills-instant-food-tab" data-bs-toggle="pill"
+                           data-bs-target="#v-pills-instant-food" role="tab"
+                           aria-selected="false">
+                        <span class="d-flex align-items-center gap-3">
+                        <img src="img/listing-4.png" alt="" class="img-fluid rounded">
+                        <b class="m-0 fw-normal">Instant & Frozen Food</b>
+                        </span>
+                        </button>
+                     </div>
+                     <div class="px-3 mt-3">
+                        <h6 class="fw-bold m-0">Stores</h6>
+                     </div>
+                     <div class="p-3 bg-white border-bottom">
+                        <form action="#">
+                           <input type="text" class="form-control h6 fw-normal mb-3" placeholder="Search by store" aria-label="Search by store">
+                        </form>
+                        <!-- form check -->
+                        <div class="form-check mb-2">
+                           <!-- input -->
+                           <input class="form-check-input" type="checkbox" value="" id="eAfrican Food" checked="">
+                           <label class="form-check-label" for="eAfrican Food">
+                           E-African Food
+                           </label>
+                        </div>
+                        <!-- form check -->
+                        <div class="form-check mb-2">
+                           <!-- input -->
+                           <input class="form-check-input" type="checkbox" value="" id="DealShare">
+                           <label class="form-check-label" for="DealShare">
+                           DealShare
+                           </label>
+                        </div>
+                        <!-- form check -->
+                        <div class="form-check mb-2">
+                           <!-- input -->
+                           <input class="form-check-input" type="checkbox" value="" id="Dmart">
+                           <label class="form-check-label" for="Dmart">
+                           DMart
+                           </label>
+                        </div>
+                        <!-- form check -->
+                        <div class="form-check mb-2">
+                           <!-- input -->
+                           <input class="form-check-input" type="checkbox" value="" id="Blinkit">
+                           <label class="form-check-label" for="Blinkit">
+                           Blinkit
+                           </label>
+                        </div>
+                        <!-- form check -->
+                        <div class="form-check mb-2">
+                           <!-- input -->
+                           <input class="form-check-input" type="checkbox" value="" id="BigBasket">
+                           <label class="form-check-label" for="BigBasket">
+                           BigBasket
+                           </label>
+                        </div>
+                        <!-- form check -->
+                        <div class="form-check mb-2">
+                           <!-- input -->
+                           <input class="form-check-input" type="checkbox" value="" id="StoreFront">
+                           <label class="form-check-label" for="StoreFront">
+                           StoreFront
+                           </label>
+                        </div>
+                        <!-- form check -->
+                        <div class="form-check mb-2">
+                           <!-- input -->
+                           <input class="form-check-input" type="checkbox" value="" id="Spencers">
+                           <label class="form-check-label" for="Spencers">
+                           Spencers
+                           </label>
+                        </div>
+                        <!-- form check -->
+                        <div class="form-check mb-0">
+                           <!-- input -->
+                           <input class="form-check-input" type="checkbox" value="" id="onlineAfrican Food">
+                           <label class="form-check-label" for="onlineAfrican Food">
+                           Online African Food
+                           </label>
+                        </div>
+                     </div>
+                     <div class="px-3 mt-3">
+                        <h6 class="fw-bold m-0">Rating</h6>
+                     </div>
+                     <div class="p-3 bg-white">
+                        <div>
+                           <!-- form check -->
+                           <div class="form-check mb-2">
+                              <!-- input -->
+                              <input class="form-check-input" type="checkbox" value="" id="ratingFive">
+                              <label class="form-check-label" for="ratingFive">
+                              <i class="bi bi-star-fill text-warning"></i>
+                              <i class="bi bi-star-fill text-warning "></i>
+                              <i class="bi bi-star-fill text-warning "></i>
+                              <i class="bi bi-star-fill text-warning "></i>
+                              <i class="bi bi-star-fill text-warning "></i>
+                              </label>
+                           </div>
+                           <!-- form check -->
+                           <div class="form-check mb-2">
+                              <!-- input -->
+                              <input class="form-check-input" type="checkbox" value="" id="ratingFour" checked="">
+                              <label class="form-check-label" for="ratingFour">
+                              <i class="bi bi-star-fill text-warning"></i>
+                              <i class="bi bi-star-fill text-warning "></i>
+                              <i class="bi bi-star-fill text-warning "></i>
+                              <i class="bi bi-star-fill text-warning "></i>
+                              <i class="bi bi-star text-warning"></i>
+                              </label>
+                           </div>
+                           <!-- form check -->
+                           <div class="form-check mb-2">
+                              <!-- input -->
+                              <input class="form-check-input" type="checkbox" value="" id="ratingThree">
+                              <label class="form-check-label" for="ratingThree">
+                              <i class="bi bi-star-fill text-warning"></i>
+                              <i class="bi bi-star-fill text-warning "></i>
+                              <i class="bi bi-star-fill text-warning "></i>
+                              <i class="bi bi-star text-warning"></i>
+                              <i class="bi bi-star text-warning"></i>
+                              </label>
+                           </div>
+                           <!-- form check -->
+                           <div class="form-check mb-2">
+                              <!-- input -->
+                              <input class="form-check-input" type="checkbox" value="" id="ratingTwo">
+                              <label class="form-check-label" for="ratingTwo">
+                              <i class="bi bi-star-fill text-warning"></i>
+                              <i class="bi bi-star-fill text-warning"></i>
+                              <i class="bi bi-star text-warning"></i>
+                              <i class="bi bi-star text-warning"></i>
+                              <i class="bi bi-star text-warning"></i>
+                              </label>
+                           </div>
+                           <!-- form check -->
+                           <div class="form-check mb-0">
+                              <!-- input -->
+                              <input class="form-check-input" type="checkbox" value="" id="ratingOne">
+                              <label class="form-check-label" for="ratingOne">
+                              <i class="bi bi-star-fill text-warning"></i>
+                              <i class="bi bi-star text-warning"></i>
+                              <i class="bi bi-star text-warning"></i>
+                              <i class="bi bi-star text-warning"></i>
+                              <i class="bi bi-star text-warning"></i>
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="offcanvas-footer">
+               <button type="submit" class="btn btn-danger fw-bold py-3 px-4 w-100 rounded-4 shadow-sm" data-bs-dismiss="offcanvas">Apply</button>
             </div>
          </div>
       </div>
