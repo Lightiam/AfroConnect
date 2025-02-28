@@ -1,38 +1,10 @@
 {
-  "appId": "com.lightiam.afroconnect",
+  "appId": "com.afroconnect.app",
   "appName": "AfroConnect",
-  "webDir": "build",
-  "backgroundColor": "#006400",
-  "android": {
-    "backgroundColor": "#006400",
-    "allowMixedContent": true,
-    "captureInput": true,
-    "webContentsDebuggingEnabled": false,
-    "hideLogs": true,
-    "contentInset": "always",
-    "permissions": [
-      "INTERNET",
-      "ACCESS_NETWORK_STATE"
-    ]
-  },
-  "ios": {
-    "backgroundColor": "#006400",
-    "allowsLinkPreview": false,
-    "scrollEnabled": true,
-    "contentInset": "always",
-    "cordovaSwiftVersion": "5.0",
-    "preferredContentMode": "mobile",
-    "permissions": {
-      "camera": {
-        "usageDescription": "The app needs camera access to scan QR codes for vendor verification"
-      },
-      "location": {
-        "usageDescription": "The app needs location access to find nearby African food vendors"
-      }
-    }
-  },
+  "webDir": ".",
+  "bundledWebRuntime": false,
   "server": {
-    "cleartext": true
+    "androidScheme": "https"
   },
   "plugins": {
     "SplashScreen": {
@@ -42,7 +14,9 @@
       "androidSplashResourceName": "splash",
       "androidScaleType": "CENTER_CROP",
       "showSpinner": true,
-      "spinnerColor": "#FFFFFF",
+      "androidSpinnerStyle": "large",
+      "iosSpinnerStyle": "large",
+      "spinnerColor": "#006400",
       "splashFullScreen": true,
       "splashImmersive": true
     }
