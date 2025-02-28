@@ -1,0 +1,14 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="16" cy="16" r="15" fill="#006400" />
+  
+  <!-- Inner Circle (plate) -->
+  <circle cx="16" cy="16" r="12" fill="#FFF8E1" stroke="#D2691E" stroke-width="1" />
+  
+  <!-- African continent silhouette -->
+  <path d="M16,8 C19,9 21,11 20,15 C19,18 18,20 16,21 C14,20 13,18 12,15 C11,11 13,9 16,8" fill="#D2691E" />
+  
+  <!-- Food elements -->
+  <circle cx="14" cy="15" r="2" fill="#FFD700" /> <!-- Representing food item -->
+  <circle cx="18" cy="15" r="1.5" fill="#8B4513" /> <!-- Representing food item -->
+</svg>
