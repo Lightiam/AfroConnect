@@ -125,3 +125,33 @@ After successful testing, the app can be prepared for submission to the app stor
 5. Fill out the store listing information
 6. Set up pricing and distribution
 7. Submit for review
+
+## App Store Submission Checklist
+
+### Google Play Store
+- [ ] App icon (512x512 PNG)
+- [ ] Feature graphic (1024x500 PNG)
+- [ ] Screenshots (at least 2)
+- [ ] Short description (80 characters max)
+- [ ] Full description (4000 characters max)
+- [ ] App category selected
+- [ ] Content rating questionnaire completed
+- [ ] Privacy policy URL provided
+- [ ] Signed APK/AAB uploaded
+- [ ] Pricing and distribution set up
+
+### Apple App Store
+- [ ] App icon (1024x1024 PNG)
+- [ ] Screenshots (at least 1 per device type)
+- [ ] App preview video (optional)
+- [ ] App name (30 characters max)
+- [ ] Subtitle (30 characters max)
+- [ ] Description (4000 characters max)
+- [ ] Keywords (100 characters max)
+- [ ] Support URL provided
+- [ ] Marketing URL (optional)
+- [ ] Privacy policy URL provided
+- [ ] App category selected
+- [ ] Content rating questionnaire completed
+- [ ] Pricing and distribution set up
+- [ ] App Review Information provided
