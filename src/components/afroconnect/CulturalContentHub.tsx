@@ -1,4 +1,3 @@
-
 import React from "react";
 
 interface ContentItem {
@@ -16,7 +15,7 @@ const CulturalContentHub: React.FC = () => {
       id: "c1",
       title: "The Rich History of Jollof Rice",
       excerpt: "Learn about the origins and cultural significance of this beloved West African dish.",
-      image: "https://images.unsplash.com/photo-1501286353178-1ec881214838?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       category: "Food History",
       date: "May 15, 2023"
     },
