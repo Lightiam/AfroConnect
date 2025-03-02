@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from "react";
 import { toast } from "sonner";
 import { Mic, MicOff, Search, Sparkles } from "lucide-react";
@@ -151,7 +150,7 @@ const HeroSearch: React.FC = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-[#355E3B] to-[#F2FCE2] py-10 px-4">
+    <section className="bg-[#355E3B] py-10 px-4">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -167,11 +166,7 @@ const HeroSearch: React.FC = () => {
             <div className="relative flex bg-white rounded-full overflow-hidden shadow-lg border border-gray-100">
               <div className="flex-grow flex items-center">
                 <div className="absolute left-4 flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/8ac3ffe3-6ffb-4c93-9805-3f591bc104eb.png" 
-                    alt="Search icon" 
-                    className="w-6 h-6 mr-2" 
-                  />
+                  <Search size={20} className="text-gray-400" />
                 </div>
                 <input
                   type="text"

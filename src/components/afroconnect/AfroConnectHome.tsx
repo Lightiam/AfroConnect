@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import ProductCard from "../grocery/ProductCard";
@@ -23,7 +24,7 @@ const AfroConnectHome: React.FC = () => {
               <h1 className="text-2xl font-bold">AfroConnect</h1>
             </div>
             <nav className="hidden md:flex space-x-4">
-              <button className="px-3 py-2 rounded-full text-sm bg-white bg-opacity-20 hover:bg-opacity-30 transition-all">
+              <button className="px-3 py-2 rounded-full text-sm bg-white/20 hover:bg-white/30 transition-all">
                 Sign In
               </button>
               <button className="px-3 py-2 rounded-full text-sm bg-white hover:bg-opacity-90 text-[#355E3B] transition-all">
