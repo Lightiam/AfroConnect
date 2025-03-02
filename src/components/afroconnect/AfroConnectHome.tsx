@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import ProductCard from "../grocery/ProductCard";
@@ -12,7 +11,7 @@ const AfroConnectHome: React.FC = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <header className="bg-gradient-to-r from-[#2E7D32] to-[#F2FCE2] text-white shadow-md">
+      <header className="bg-[#355E3B] text-white shadow-md">
         <div className="container mx-auto px-4 py-3">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
@@ -27,7 +26,7 @@ const AfroConnectHome: React.FC = () => {
               <button className="px-3 py-2 rounded-full text-sm bg-white bg-opacity-20 hover:bg-opacity-30 transition-all">
                 Sign In
               </button>
-              <button className="px-3 py-2 rounded-full text-sm bg-white hover:bg-opacity-90 text-[#2E7D32] transition-all">
+              <button className="px-3 py-2 rounded-full text-sm bg-white hover:bg-opacity-90 text-[#355E3B] transition-all">
                 Become a Vendor
               </button>
             </nav>
@@ -44,7 +43,7 @@ const AfroConnectHome: React.FC = () => {
         <section className="mb-8">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-semibold text-gray-800">Popular Categories</h2>
-            <button className="text-[#2E7D32] text-sm font-medium flex items-center">
+            <button className="text-[#355E3B] text-sm font-medium flex items-center">
               View All
               <i className="ti ti-chevron-right ml-1" aria-hidden="true" />
             </button>
@@ -55,7 +54,7 @@ const AfroConnectHome: React.FC = () => {
         <section className="mb-8">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-semibold text-gray-800">Featured Products</h2>
-            <button className="text-[#2E7D32] text-sm font-medium flex items-center">
+            <button className="text-[#355E3B] text-sm font-medium flex items-center">
               View All
               <i className="ti ti-chevron-right ml-1" aria-hidden="true" />
             </button>
@@ -99,7 +98,7 @@ const AfroConnectHome: React.FC = () => {
         <CulturalContentHub />
       </main>
 
-      <footer className="bg-[#2E7D32] text-white py-6">
+      <footer className="bg-[#355E3B] text-white py-6">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -155,35 +154,35 @@ const AfroConnectHome: React.FC = () => {
 
       <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 flex justify-around py-2 md:hidden">
         <button 
-          className={`p-2 rounded-full flex flex-col items-center ${activeTab === 'home' ? 'text-[#2E7D32]' : 'text-gray-500'}`}
+          className={`p-2 rounded-full flex flex-col items-center ${activeTab === 'home' ? 'text-[#355E3B]' : 'text-gray-500'}`}
           onClick={() => setActiveTab('home')}
         >
           <i className="ti ti-home text-xl" aria-hidden="true" />
           <span className="text-xs mt-1">Home</span>
         </button>
         <button 
-          className={`p-2 rounded-full flex flex-col items-center ${activeTab === 'marketplace' ? 'text-[#2E7D32]' : 'text-gray-500'}`}
+          className={`p-2 rounded-full flex flex-col items-center ${activeTab === 'marketplace' ? 'text-[#355E3B]' : 'text-gray-500'}`}
           onClick={() => setActiveTab('marketplace')}
         >
           <i className="ti ti-shopping-cart text-xl" aria-hidden="true" />
           <span className="text-xs mt-1">Market</span>
         </button>
         <button 
-          className={`p-2 rounded-full flex flex-col items-center ${activeTab === 'vendors' ? 'text-[#2E7D32]' : 'text-gray-500'}`}
+          className={`p-2 rounded-full flex flex-col items-center ${activeTab === 'vendors' ? 'text-[#355E3B]' : 'text-gray-500'}`}
           onClick={() => setActiveTab('vendors')}
         >
           <i className="ti ti-building-store text-xl" aria-hidden="true" />
           <span className="text-xs mt-1">Vendors</span>
         </button>
         <button 
-          className={`p-2 rounded-full flex flex-col items-center ${activeTab === 'culture' ? 'text-[#2E7D32]' : 'text-gray-500'}`}
+          className={`p-2 rounded-full flex flex-col items-center ${activeTab === 'culture' ? 'text-[#355E3B]' : 'text-gray-500'}`}
           onClick={() => setActiveTab('culture')}
         >
           <i className="ti ti-article text-xl" aria-hidden="true" />
           <span className="text-xs mt-1">Culture</span>
         </button>
         <button 
-          className={`p-2 rounded-full flex flex-col items-center ${activeTab === 'profile' ? 'text-[#2E7D32]' : 'text-gray-500'}`}
+          className={`p-2 rounded-full flex flex-col items-center ${activeTab === 'profile' ? 'text-[#355E3B]' : 'text-gray-500'}`}
           onClick={() => setActiveTab('profile')}
         >
           <i className="ti ti-user text-xl" aria-hidden="true" />
