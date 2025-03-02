@@ -11,7 +11,7 @@ const HeroSearch: React.FC = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-[#8B4513] to-[#F5DEB3] py-10 px-4">
+    <section className="bg-gradient-to-r from-[#2E7D32] to-[#F2FCE2] py-10 px-4">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -36,7 +36,7 @@ const HeroSearch: React.FC = () => {
             </div>
             <button
               type="submit"
-              className="bg-[#8B4513] text-white px-6 py-3 font-medium hover:bg-[#734013] transition-colors"
+              className="bg-[#2E7D32] text-white px-6 py-3 font-medium hover:bg-[#1B5E20] transition-colors"
             >
               Search
             </button>

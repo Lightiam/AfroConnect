@@ -34,7 +34,7 @@ const CulturalContentHub: React.FC = () => {
     <section className="mb-10">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold text-gray-800">Cultural Hub</h2>
-        <button className="text-[#8B4513] text-sm font-medium flex items-center">
+        <button className="text-[#2E7D32] text-sm font-medium flex items-center">
           View All
           <i className="ti ti-chevron-right ml-1" aria-hidden="true" />
         </button>
@@ -61,7 +61,7 @@ const CulturalContentHub: React.FC = () => {
               </div>
               <h3 className="font-semibold text-gray-800 mb-2">{item.title}</h3>
               <p className="text-sm text-gray-600 mb-3">{item.excerpt}</p>
-              <button className="text-[#8B4513] text-sm font-medium flex items-center">
+              <button className="text-[#2E7D32] text-sm font-medium flex items-center">
                 Read More
                 <i className="ti ti-arrow-right ml-1" aria-hidden="true" />
               </button>
@@ -70,7 +70,7 @@ const CulturalContentHub: React.FC = () => {
         ))}
       </div>
       
-      <div className="bg-[#F8F2E8] rounded-xl p-6 mt-6">
+      <div className="bg-[#F2FCE2] rounded-xl p-6 mt-6">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-4 md:mb-0 md:mr-6">
             <h3 className="text-xl font-semibold text-gray-800 mb-2">Subscribe to Our Newsletter</h3>
@@ -83,7 +83,7 @@ const CulturalContentHub: React.FC = () => {
                 placeholder="Your email address"
                 className="flex-grow px-4 py-2 rounded-l-lg focus:outline-none border border-gray-300"
               />
-              <button className="bg-[#8B4513] text-white px-4 py-2 rounded-r-lg font-medium hover:bg-[#734013] transition-colors">
+              <button className="bg-[#2E7D32] text-white px-4 py-2 rounded-r-lg font-medium hover:bg-[#1B5E20] transition-colors">
                 Subscribe
               </button>
             </div>

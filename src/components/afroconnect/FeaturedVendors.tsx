@@ -47,7 +47,7 @@ const FeaturedVendors: React.FC = () => {
     <section className="mb-8">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold text-gray-800">Featured Vendors</h2>
-        <button className="text-[#8B4513] text-sm font-medium flex items-center">
+        <button className="text-[#2E7D32] text-sm font-medium flex items-center">
           View All
           <i className="ti ti-chevron-right ml-1" aria-hidden="true" />
         </button>
@@ -90,7 +90,7 @@ const FeaturedVendors: React.FC = () => {
             <div className="p-4">
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-600">{vendor.productCount} products</span>
-                <button className="text-[#8B4513] text-sm font-medium">
+                <button className="text-[#2E7D32] text-sm font-medium">
                   Visit Store
                 </button>
               </div>
