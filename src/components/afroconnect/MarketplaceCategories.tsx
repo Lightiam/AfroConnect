@@ -12,14 +12,16 @@ const MarketplaceCategories: React.FC = () => {
   const categories: Category[] = [
     { id: "spices", name: "Spices & Seasonings", icon: "pepper", count: 128 },
     { id: "grains", name: "Grains & Flours", icon: "wheat", count: 95 },
-    { id: "oils", name: "Oils & Sauces", icon: "bottle", count: 74 },
-    { id: "snacks", name: "Snacks & Treats", icon: "cookie", count: 103 },
-    { id: "fresh", name: "Fresh Produce", icon: "plant", count: 112 },
-    { id: "meals", name: "Ready Meals", icon: "bowl", count: 56 },
+    { id: "suya", name: "Suya & Grilled Meats", icon: "meat", count: 67 },
+    { id: "akamu", name: "Akamu & Porridges", icon: "bowl-spoon", count: 54 },
+    { id: "amala", name: "Amala & Swallows", icon: "bowl", count: 81 },
+    { id: "igbo", name: "Igbo Delicacies", icon: "fish", count: 93 },
+    { id: "yoruba", name: "Yoruba Delicacies", icon: "soup", count: 89 },
+    { id: "soups", name: "Soups & Stews", icon: "cooking-pot", count: 112 },
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {categories.map((category) => (
         <div 
           key={category.id}

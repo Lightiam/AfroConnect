@@ -14,34 +14,34 @@ const CulturalContentHub: React.FC = () => {
   const contentItems: ContentItem[] = [
     {
       id: "c1",
-      title: "The Rich History of Jollof Rice",
-      excerpt: "Learn about the origins and cultural significance of this beloved West African dish.",
+      title: "The Art of Making Perfect Suya",
+      excerpt: "Discover the secrets behind Nigeria's favorite spicy grilled meat delicacy and its traditional preparation.",
       image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      category: "Food History",
+      category: "Meat Delicacies",
       date: "May 15, 2023"
     },
     {
       id: "c2",
-      title: "African Spices: Health Benefits and Uses",
-      excerpt: "Discover the medicinal properties of traditional African spices and how to use them.",
+      title: "Akamu: The Nutritious Nigerian Breakfast",
+      excerpt: "Learn how to prepare this fermented cereal porridge loved across West Africa for its health benefits.",
       image: "https://images.unsplash.com/photo-1565200003018-ecc3decc85d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      category: "Health & Wellness",
+      category: "Breakfast Foods",
       date: "June 3, 2023"
     },
     {
       id: "c3",
-      title: "Traditional Fufu: The Perfect Technique",
-      excerpt: "Master the art of making smooth, perfect fufu with this step-by-step guide from expert cooks.",
+      title: "Amala and Ewedu: Perfect Pairing",
+      excerpt: "Master the art of making smooth Amala and complementing Ewedu soup, a treasured Yoruba combination.",
       image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      category: "Cooking Tutorials",
+      category: "Yoruba Cuisine",
       date: "July 12, 2023"
     },
     {
       id: "c4",
-      title: "Plantain Dishes Across Africa",
-      excerpt: "Explore the diverse ways plantains are prepared in different African cuisines, from kelewele to dodo.",
+      title: "Regional Delicacies: Igbo vs Yoruba Foods",
+      excerpt: "Explore the distinctive culinary traditions of two of Nigeria's major ethnic groups and their signature dishes.",
       image: "https://images.unsplash.com/photo-1603431777007-61db4494a034?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      category: "Food Culture",
+      category: "Cultural Cuisine",
       date: "August 8, 2023"
     }
   ];
@@ -90,7 +90,7 @@ const CulturalContentHub: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-4 md:mb-0 md:mr-6">
             <h3 className="text-xl font-semibold text-gray-800 mb-2">Subscribe to Our Food Newsletter</h3>
-            <p className="text-gray-600">Get weekly African recipes, cooking tips, and exclusive food vendor deals.</p>
+            <p className="text-gray-600">Get weekly African recipes, cooking tips, and exclusive traditional food guides.</p>
           </div>
           <div className="w-full md:w-auto">
             <div className="flex">
