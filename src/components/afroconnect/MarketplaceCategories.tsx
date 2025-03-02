@@ -14,8 +14,8 @@ const MarketplaceCategories: React.FC = () => {
     { id: "grains", name: "Grains & Flours", icon: "wheat", count: 95 },
     { id: "oils", name: "Oils & Sauces", icon: "bottle", count: 74 },
     { id: "snacks", name: "Snacks & Treats", icon: "cookie", count: 103 },
-    { id: "drinks", name: "Beverages", icon: "glass", count: 67 },
-    { id: "beauty", name: "Beauty & Wellness", icon: "flower", count: 89 },
+    { id: "fresh", name: "Fresh Produce", icon: "plant", count: 112 },
+    { id: "meals", name: "Ready Meals", icon: "bowl", count: 56 },
   ];
 
   return (

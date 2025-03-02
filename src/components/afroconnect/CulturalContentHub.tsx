@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface ContentItem {
@@ -26,13 +27,29 @@ const CulturalContentHub: React.FC = () => {
       image: "https://images.unsplash.com/photo-1565200003018-ecc3decc85d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       category: "Health & Wellness",
       date: "June 3, 2023"
+    },
+    {
+      id: "c3",
+      title: "Traditional Fufu: The Perfect Technique",
+      excerpt: "Master the art of making smooth, perfect fufu with this step-by-step guide from expert cooks.",
+      image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      category: "Cooking Tutorials",
+      date: "July 12, 2023"
+    },
+    {
+      id: "c4",
+      title: "Plantain Dishes Across Africa",
+      excerpt: "Explore the diverse ways plantains are prepared in different African cuisines, from kelewele to dodo.",
+      image: "https://images.unsplash.com/photo-1603431777007-61db4494a034?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      category: "Food Culture",
+      date: "August 8, 2023"
     }
   ];
 
   return (
     <section className="mb-10">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold text-gray-800">Cultural Hub</h2>
+        <h2 className="text-xl font-semibold text-gray-800">African Food Hub</h2>
         <button className="text-[#2E7D32] text-sm font-medium flex items-center">
           View All
           <i className="ti ti-chevron-right ml-1" aria-hidden="true" />
@@ -72,8 +89,8 @@ const CulturalContentHub: React.FC = () => {
       <div className="bg-[#F2FCE2] rounded-xl p-6 mt-6">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-4 md:mb-0 md:mr-6">
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">Subscribe to Our Newsletter</h3>
-            <p className="text-gray-600">Get the latest updates on African cuisine, cultural insights, and exclusive vendor offers.</p>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">Subscribe to Our Food Newsletter</h3>
+            <p className="text-gray-600">Get weekly African recipes, cooking tips, and exclusive food vendor deals.</p>
           </div>
           <div className="w-full md:w-auto">
             <div className="flex">
