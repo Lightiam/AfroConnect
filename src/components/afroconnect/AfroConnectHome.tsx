@@ -17,9 +17,9 @@ const AfroConnectHome: React.FC = () => {
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
               <img 
-                src="/placeholder.svg" 
+                src="/lovable-uploads/e6dee00a-5d92-435b-a385-666bdf0a083b.png" 
                 alt="AfroConnect Logo" 
-                className="h-10 w-10 bg-white rounded-full p-1"
+                className="h-10 w-auto bg-white rounded-md p-1"
               />
               <h1 className="text-2xl font-bold">AfroConnect</h1>
             </div>
@@ -103,7 +103,14 @@ const AfroConnectHome: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">AfroConnect</h3>
+              <div className="flex items-center space-x-2 mb-4">
+                <img 
+                  src="/lovable-uploads/e6dee00a-5d92-435b-a385-666bdf0a083b.png" 
+                  alt="AfroConnect Logo" 
+                  className="h-10 w-auto bg-white rounded-md p-1"
+                />
+                <h3 className="text-lg font-semibold">AfroConnect</h3>
+              </div>
               <p className="text-white/80 mb-4">Connecting African food vendors with diaspora customers worldwide.</p>
               <div className="flex gap-4">
                 <a href="#" className="text-white hover:text-white/80" aria-label="Facebook">
