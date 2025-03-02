@@ -1,7 +1,7 @@
 
 import React, { useState, useRef } from "react";
 import { toast } from "sonner";
-import { Mic, MicOff, Search } from "lucide-react";
+import { Mic, MicOff, Search, Sparkles } from "lucide-react";
 import { performAISearch, performVoiceSearch, SearchResult } from "@/services/AISearchService";
 import SearchResults from "./SearchResults";
 
@@ -151,7 +151,7 @@ const HeroSearch: React.FC = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-[#2E7D32] to-[#F2FCE2] py-10 px-4">
+    <section className="bg-gradient-to-r from-[#355E3B] to-[#F2FCE2] py-10 px-4">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -164,13 +164,19 @@ const HeroSearch: React.FC = () => {
 
         <form onSubmit={handleSearch} className="max-w-2xl mx-auto">
           <div className="relative">
-            <div className="relative flex bg-white rounded-full overflow-hidden shadow-lg">
+            <div className="relative flex bg-white rounded-full overflow-hidden shadow-lg border border-gray-100">
               <div className="flex-grow flex items-center">
-                <Search className="ml-4 text-gray-400" size={20} />
+                <div className="absolute left-4 flex items-center justify-center">
+                  <img 
+                    src="/lovable-uploads/8ac3ffe3-6ffb-4c93-9805-3f591bc104eb.png" 
+                    alt="Search icon" 
+                    className="w-6 h-6 mr-2" 
+                  />
+                </div>
                 <input
                   type="text"
                   placeholder="Search for African food products, spices, ingredients..."
-                  className="w-full py-3 px-4 outline-none"
+                  className="w-full py-4 pl-14 pr-4 outline-none"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
@@ -178,15 +184,16 @@ const HeroSearch: React.FC = () => {
               <button
                 type="button"
                 onClick={toggleVoiceSearch}
-                className={`px-2 ${isListening ? 'text-red-500' : 'text-gray-500'} hover:text-[#2E7D32] transition-colors`}
+                className={`px-2 ${isListening ? 'text-red-500' : 'text-gray-500'} hover:text-[#355E3B] transition-colors`}
                 title={isListening ? "Stop voice search" : "Search with your voice"}
               >
                 {isListening ? <MicOff size={20} /> : <Mic size={20} />}
               </button>
               <button
                 type="submit"
-                className="bg-[#2E7D32] text-white px-6 py-3 font-medium hover:bg-[#1B5E20] transition-colors"
+                className="bg-[#355E3B] text-white px-6 py-4 font-medium hover:bg-opacity-90 transition-colors flex items-center"
               >
+                <Sparkles size={18} className="mr-2" />
                 Search
               </button>
             </div>

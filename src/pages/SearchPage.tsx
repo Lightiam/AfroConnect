@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { performAISearch, SearchResult } from "@/services/AISearchService";
-import { Search } from "lucide-react";
+import { Search, Sparkles } from "lucide-react";
 
 const SearchPage: React.FC = () => {
   const location = useLocation();
@@ -34,7 +34,7 @@ const SearchPage: React.FC = () => {
     <div className="container mx-auto py-8 px-4">
       <div className="flex items-center mb-6">
         <div className="w-10 h-10 rounded-full bg-[#F2FCE2] flex items-center justify-center mr-3">
-          <Search className="text-[#2E7D32]" size={20} />
+          <Search className="text-[#355E3B]" size={20} />
         </div>
         <h1 className="text-2xl font-bold text-gray-800">
           {query ? `Search results for "${query}"` : "Search Results"}
@@ -43,7 +43,7 @@ const SearchPage: React.FC = () => {
 
       {isLoading ? (
         <div className="flex justify-center items-center py-20">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#2E7D32]"></div>
+          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#355E3B]"></div>
           <span className="ml-3 text-gray-600">Searching with AI...</span>
         </div>
       ) : results.length > 0 ? (
@@ -62,12 +62,13 @@ const SearchPage: React.FC = () => {
               <h3 className="font-semibold text-lg text-gray-800 mb-2">{result.name}</h3>
               <p className="text-gray-600 text-sm mb-3">{result.description}</p>
               <div className="flex justify-between items-center">
-                <span className="text-xs px-2 py-1 bg-[#F2FCE2] text-[#2E7D32] rounded-full">
+                <span className="text-xs px-2 py-1 bg-[#F2FCE2] text-[#355E3B] rounded-full">
                   {result.category}
                 </span>
-                <span className="font-bold text-[#2E7D32]">${result.price}</span>
+                <span className="font-bold text-[#355E3B]">${result.price}</span>
               </div>
-              <button className="w-full mt-4 bg-[#2E7D32] text-white py-2 rounded-lg hover:bg-[#1B5E20] transition-colors">
+              <button className="w-full mt-4 bg-[#355E3B] text-white py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center">
+                <Sparkles size={16} className="mr-2" />
                 Add to Cart
               </button>
             </div>
