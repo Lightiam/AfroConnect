@@ -6,6 +6,7 @@ import FeaturedVendors from "./FeaturedVendors";
 import MarketplaceCategories from "./MarketplaceCategories";
 import CulturalContentHub from "./CulturalContentHub";
 import HeroSearch from "./HeroSearch";
+import { Link } from "react-router-dom";
 
 const AfroConnectHome: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>("home");
@@ -24,12 +25,12 @@ const AfroConnectHome: React.FC = () => {
               <h1 className="text-xl md:text-2xl font-bold">AfroConnect</h1>
             </div>
             <nav className="hidden md:flex space-x-4">
-              <button className="px-3 py-2 rounded-full text-sm bg-white/20 hover:bg-white/30 transition-all">
+              <Link to="/buyer-profile" className="px-3 py-2 rounded-full text-sm bg-white/20 hover:bg-white/30 transition-all">
                 Sign In
-              </button>
-              <button className="px-3 py-2 rounded-full text-sm bg-white hover:bg-opacity-90 text-[#355E3B] transition-all">
+              </Link>
+              <Link to="/vendor-profile" className="px-3 py-2 rounded-full text-sm bg-white hover:bg-opacity-90 text-[#355E3B] transition-all">
                 Become a Vendor
-              </button>
+              </Link>
             </nav>
             <button className="md:hidden text-xl">
               <i className="ti ti-menu-2" aria-hidden="true" />
@@ -61,14 +62,17 @@ const AfroConnectHome: React.FC = () => {
             </button>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
-            <ProductCard 
-              image="https://images.unsplash.com/photo-1582562124811-c09040d0a901?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
-              price="$12.99" 
-              altText="African Spices"
-              name="Premium Spice Mix"
-              country="Nigeria"
-              isNew={true}
-            />
+            <Link to="/vendor-profile">
+              <ProductCard 
+                image="https://images.unsplash.com/photo-1582562124811-c09040d0a901?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                price="$12.99" 
+                altText="African Spices"
+                name="Premium Spice Mix"
+                country="Nigeria"
+                isNew={true}
+                onPress={() => {}}
+              />
+            </Link>
             <ProductCard 
               image="https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
               price="$8.49" 
@@ -189,13 +193,13 @@ const AfroConnectHome: React.FC = () => {
           <i className="ti ti-article text-lg" aria-hidden="true" />
           <span className="text-[10px] mt-0.5">Culture</span>
         </button>
-        <button 
+        <Link to="/buyer-profile" 
           className={`p-1.5 rounded-full flex flex-col items-center ${activeTab === 'profile' ? 'text-[#355E3B]' : 'text-gray-500'}`}
           onClick={() => setActiveTab('profile')}
         >
           <i className="ti ti-user text-lg" aria-hidden="true" />
           <span className="text-[10px] mt-0.5">Profile</span>
-        </button>
+        </Link>
       </nav>
     </div>
   );
