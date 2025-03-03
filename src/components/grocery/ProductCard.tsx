@@ -23,19 +23,19 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div 
-      className="bg-white text-center p-2 md:p-3 rounded-[10px] shadow-sm hover:shadow-md transition-all cursor-pointer"
+      className="bg-white text-center p-3 rounded-[12px] shadow-md hover:shadow-lg transition-all cursor-pointer active:scale-[0.98]"
       onClick={onPress}
     >
-      <div className="relative">
+      <div className="relative overflow-hidden rounded-lg">
         <img
           src={image}
           alt={altText}
-          className="w-full h-28 md:h-40 object-cover mb-1.5 md:mb-2.5 rounded-lg"
+          className="w-full h-28 md:h-40 object-cover mb-2 md:mb-3 transform hover:scale-105 transition-all duration-300"
         />
         {isNew && (
           <Badge 
             variant="success" 
-            className="absolute top-1 md:top-2 right-1 md:right-2 text-xs"
+            className="absolute top-2 right-2 text-xs font-bold"
           >
             New
           </Badge>
@@ -43,14 +43,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
         {country && (
           <Badge 
             variant="secondary" 
-            className="absolute bottom-1 md:bottom-2 right-1 md:right-2 text-xs"
+            className="absolute bottom-2 right-2 text-xs"
           >
             {country}
           </Badge>
         )}
       </div>
-      {name && <div className="font-medium text-gray-800 mb-0.5 md:mb-1 text-sm md:text-base truncate">{name}</div>}
-      <div className="text-[#4caf50] font-medium text-sm md:text-base">{price}</div>
+      {name && <div className="font-medium text-gray-800 mb-1 text-sm md:text-base truncate">{name}</div>}
+      <div className="text-[#4caf50] font-semibold text-sm md:text-base">{price}</div>
     </div>
   );
 };

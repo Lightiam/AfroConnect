@@ -4,12 +4,7 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
-}
-
-@media (min-width: 768px) {
-  #root {
-    padding: 0;
-  }
+  overflow-x: hidden;
 }
 
 .logo {
@@ -52,4 +47,40 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 767px) {
+  body {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  input, button {
+    font-size: 16px; /* Prevents iOS zoom on input focus */
+  }
+  
+  /* Improve touch targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Add momentum scrolling for iOS */
+  .scroll-container {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+  }
+}
+
+/* Prevent content shift during image loading */
+img {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Improve performance for animations */
+.animate-optimized {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
