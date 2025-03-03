@@ -31,26 +31,26 @@ const SearchPage: React.FC = () => {
   }, [query]);
 
   return (
-    <div className="container mx-auto py-8 px-4">
-      <div className="flex items-center mb-6">
-        <div className="w-10 h-10 rounded-full bg-[#F2FCE2] flex items-center justify-center mr-3">
-          <Search className="text-[#355E3B]" size={20} />
+    <div className="container mx-auto py-4 md:py-8 px-3 md:px-4">
+      <div className="flex items-center mb-4 md:mb-6">
+        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#F2FCE2] flex items-center justify-center mr-2 md:mr-3">
+          <Search className="text-[#355E3B]" size={16} />
         </div>
-        <h1 className="text-2xl font-bold text-gray-800">
+        <h1 className="text-xl md:text-2xl font-bold text-gray-800">
           {query ? `Search results for "${query}"` : "Search Results"}
         </h1>
       </div>
 
       {isLoading ? (
-        <div className="flex justify-center items-center py-20">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#355E3B]"></div>
-          <span className="ml-3 text-gray-600">Searching with AI...</span>
+        <div className="flex justify-center items-center py-12 md:py-20">
+          <div className="animate-spin rounded-full h-8 w-8 md:h-10 md:w-10 border-b-2 border-[#355E3B]"></div>
+          <span className="ml-3 text-gray-600 text-sm md:text-base">Searching with AI...</span>
         </div>
       ) : results.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {results.map((result) => (
-            <div key={result.id} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all p-4">
-              <div className="h-40 bg-gray-100 rounded-lg mb-4">
+            <div key={result.id} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all p-3 md:p-4">
+              <div className="h-32 md:h-40 bg-gray-100 rounded-lg mb-3 md:mb-4">
                 {result.image && (
                   <img
                     src={result.image}
@@ -59,28 +59,28 @@ const SearchPage: React.FC = () => {
                   />
                 )}
               </div>
-              <h3 className="font-semibold text-lg text-gray-800 mb-2">{result.name}</h3>
-              <p className="text-gray-600 text-sm mb-3">{result.description}</p>
+              <h3 className="font-semibold text-base md:text-lg text-gray-800 mb-1 md:mb-2">{result.name}</h3>
+              <p className="text-xs md:text-sm text-gray-600 mb-2 md:mb-3">{result.description}</p>
               <div className="flex justify-between items-center">
                 <span className="text-xs px-2 py-1 bg-[#F2FCE2] text-[#355E3B] rounded-full">
                   {result.category}
                 </span>
-                <span className="font-bold text-[#355E3B]">${result.price}</span>
+                <span className="font-bold text-[#355E3B] text-sm md:text-base">${result.price}</span>
               </div>
-              <button className="w-full mt-4 bg-[#355E3B] text-white py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center">
-                <Sparkles size={16} className="mr-2" />
+              <button className="w-full mt-3 md:mt-4 bg-[#355E3B] text-white py-1.5 md:py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center text-sm md:text-base">
+                <Sparkles size={14} className="mr-1 md:mr-2" />
                 Add to Cart
               </button>
             </div>
           ))}
         </div>
       ) : (
-        <div className="text-center py-16">
-          <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Search className="text-gray-400" size={24} />
+        <div className="text-center py-10 md:py-16">
+          <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+            <Search className="text-gray-400" size={20} />
           </div>
-          <h2 className="text-xl font-medium text-gray-800 mb-2">No results found</h2>
-          <p className="text-gray-600">
+          <h2 className="text-lg md:text-xl font-medium text-gray-800 mb-1 md:mb-2">No results found</h2>
+          <p className="text-sm md:text-base text-gray-600">
             We couldn't find any products matching "{query}". Try different keywords or categories.
           </p>
         </div>

@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from "react";
 import { toast } from "sonner";
 import { Mic, MicOff, Search, Sparkles } from "lucide-react";
@@ -150,28 +151,28 @@ const HeroSearch: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#355E3B] py-10 px-4">
+    <section className="bg-[#355E3B] py-6 md:py-10 px-3 md:px-4">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <div className="text-center mb-5 md:mb-8">
+          <h1 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-4">
             Connect with Authentic African Food Products
           </h1>
-          <p className="text-white/90 text-lg max-w-2xl mx-auto">
+          <p className="text-white/90 text-base md:text-lg max-w-2xl mx-auto">
             Discover and order genuine African ingredients, spices, and food products from verified vendors worldwide.
           </p>
         </div>
 
-        <form onSubmit={handleSearch} className="max-w-2xl mx-auto">
-          <div className="relative">
-            <div className="relative flex bg-white rounded-full overflow-hidden shadow-lg border border-gray-100">
+        <form onSubmit={handleSearch} className="max-w-2xl mx-auto w-full">
+          <div className="relative w-full">
+            <div className="relative flex bg-white rounded-full overflow-hidden shadow-lg border border-gray-100 w-full">
               <div className="flex-grow flex items-center">
-                <div className="absolute left-4 flex items-center justify-center">
-                  <Search size={20} className="text-gray-400" />
+                <div className="absolute left-3 md:left-4 flex items-center justify-center">
+                  <Search size={18} className="text-gray-400" />
                 </div>
                 <input
                   type="text"
-                  placeholder="Search for African food products, spices, ingredients..."
-                  className="w-full py-4 pl-14 pr-4 outline-none"
+                  placeholder="Search for African food products..."
+                  className="w-full py-3 md:py-4 pl-10 md:pl-14 pr-2 md:pr-4 outline-none text-sm md:text-base"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
@@ -182,13 +183,13 @@ const HeroSearch: React.FC = () => {
                 className={`px-2 ${isListening ? 'text-red-500' : 'text-gray-500'} hover:text-[#355E3B] transition-colors`}
                 title={isListening ? "Stop voice search" : "Search with your voice"}
               >
-                {isListening ? <MicOff size={20} /> : <Mic size={20} />}
+                {isListening ? <MicOff size={18} /> : <Mic size={18} />}
               </button>
               <button
                 type="submit"
-                className="bg-[#355E3B] text-white px-6 py-4 font-medium hover:bg-opacity-90 transition-colors flex items-center"
+                className="bg-[#355E3B] text-white px-3 md:px-6 py-3 md:py-4 font-medium hover:bg-opacity-90 transition-colors flex items-center text-sm md:text-base"
               >
-                <Sparkles size={18} className="mr-2" />
+                <Sparkles size={16} className="mr-1 md:mr-2" />
                 Search
               </button>
             </div>
@@ -202,14 +203,14 @@ const HeroSearch: React.FC = () => {
             )}
           </div>
           
-          <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <div className="flex flex-wrap justify-center gap-2 mt-3 md:mt-4">
             {["Jollof Rice", "Shea Butter", "Palm Oil", "African Spices"].map((keyword) => (
               <span
                 key={keyword}
-                className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-white/30 text-white cursor-pointer hover:bg-white/40 transition-colors"
+                className="inline-flex items-center px-2 md:px-3 py-1 rounded-full text-xs md:text-sm bg-white/30 text-white cursor-pointer hover:bg-white/40 transition-colors"
                 onClick={() => handleKeywordClick(keyword)}
               >
-                <Search className="mr-1" size={14} />
+                <Search className="mr-1" size={12} />
                 {keyword}
               </span>
             ))}
