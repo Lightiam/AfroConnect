@@ -13,30 +13,73 @@ import ShoppingCart from "./components/afroconnect/ShoppingCart";
 import Checkout from "./components/afroconnect/Checkout";
 import OrderConfirmation from "./components/afroconnect/OrderConfirmation";
 import { CartProvider } from "./contexts/CartContext";
+import { AuthProvider } from "./contexts/AuthContext";
+import SignInPage from "./pages/SignIn";
+import SignUpPage from "./pages/SignUp";
+import AuthGuard from "./components/auth/AuthGuard";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <CartProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/vendor-profile" element={<VendorProfile />} />
-            <Route path="/buyer-profile" element={<BuyerProfile />} />
-            <Route path="/cart" element={<ShoppingCart />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/order-confirmation" element={<OrderConfirmation />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/search" element={<SearchPage />} />
+              <Route path="/signin" element={<SignInPage />} />
+              <Route path="/signup" element={<SignUpPage />} />
+              <Route 
+                path="/vendor-profile" 
+                element={
+                  <AuthGuard requireVendor={true}>
+                    <VendorProfile />
+                  </AuthGuard>
+                } 
+              />
+              <Route 
+                path="/buyer-profile" 
+                element={
+                  <AuthGuard>
+                    <BuyerProfile />
+                  </AuthGuard>
+                } 
+              />
+              <Route 
+                path="/cart" 
+                element={
+                  <AuthGuard>
+                    <ShoppingCart />
+                  </AuthGuard>
+                } 
+              />
+              <Route 
+                path="/checkout" 
+                element={
+                  <AuthGuard>
+                    <Checkout />
+                  </AuthGuard>
+                } 
+              />
+              <Route 
+                path="/order-confirmation" 
+                element={
+                  <AuthGuard>
+                    <OrderConfirmation />
+                  </AuthGuard>
+                } 
+              />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </CartProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 

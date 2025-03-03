@@ -7,7 +7,7 @@ import { useCart, CartItem } from "@/contexts/CartContext";
 interface ProductCardProps {
   image: string;
   price: string;
-  name: string;
+  name?: string; // Made optional with ?
   country?: string;
   isNew?: boolean;
   altText?: string;
@@ -17,7 +17,7 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({
   image,
   price,
-  name,
+  name = "", // Default value to avoid undefined
   country,
   isNew = false,
   altText = "",
@@ -34,7 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
     
     const cartItem: CartItem = {
       id: `p-${Math.random().toString(36).substring(2, 10)}`, // generate random id
-      name,
+      name: name || altText || "Product", // Use fallbacks if name is empty
       price: priceNumber,
       quantity: 1,
       image,
@@ -45,7 +45,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
     
     toast({
       title: "Added to cart",
-      description: `${name} has been added to your cart`,
+      description: `${name || "Product"} has been added to your cart`,
     });
   };
   
@@ -76,7 +76,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </div>
       
       <div className="p-2">
-        <h3 className="font-medium text-sm md:text-base truncate">{name}</h3>
+        <h3 className="font-medium text-sm md:text-base truncate">{name || altText || "Product"}</h3>
         
         {country && (
           <p className="text-gray-500 text-xs mt-1 truncate">{country}</p>
