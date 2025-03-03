@@ -1,56 +1,89 @@
 
 import React from "react";
 import { Badge } from "@/components/ui/badge";
+import { useToast } from "@/hooks/use-toast";
+import { useCart, CartItem } from "@/contexts/CartContext";
 
 interface ProductCardProps {
   image: string;
   price: string;
-  altText: string;
-  name?: string;
+  name: string;
   country?: string;
   isNew?: boolean;
+  altText?: string;
   onPress?: () => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ 
-  image, 
-  price, 
-  altText, 
-  name, 
-  country, 
-  isNew,
-  onPress
+const ProductCard: React.FC<ProductCardProps> = ({
+  image,
+  price,
+  name,
+  country,
+  isNew = false,
+  altText = "",
+  onPress,
 }) => {
+  const { toast } = useToast();
+  const { addItem } = useCart();
+  
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    
+    // Convert price string (e.g. "$12.99") to number
+    const priceNumber = parseFloat(price.replace(/[^0-9.]/g, ''));
+    
+    const cartItem: CartItem = {
+      id: `p-${Math.random().toString(36).substring(2, 10)}`, // generate random id
+      name,
+      price: priceNumber,
+      quantity: 1,
+      image,
+      vendor: country || "Unknown Vendor"
+    };
+    
+    addItem(cartItem);
+    
+    toast({
+      title: "Added to cart",
+      description: `${name} has been added to your cart`,
+    });
+  };
+  
   return (
-    <div 
-      className="bg-white text-center p-3 rounded-[12px] shadow-md hover:shadow-lg transition-all cursor-pointer active:scale-[0.98]"
+    <div
+      className="relative bg-white shadow-sm hover:shadow-md transition-shadow rounded-xl overflow-hidden"
       onClick={onPress}
     >
-      <div className="relative overflow-hidden rounded-lg">
+      <div className="relative h-40 md:h-48">
         <img
           src={image}
-          alt={altText}
-          className="w-full h-28 md:h-40 object-cover mb-2 md:mb-3 transform hover:scale-105 transition-all duration-300"
+          alt={altText || name}
+          className="w-full h-full object-cover"
         />
+        
         {isNew && (
-          <Badge 
-            variant="success" 
-            className="absolute top-2 right-2 text-xs font-bold"
-          >
+          <Badge className="absolute top-2 left-2 bg-red-500 hover:bg-red-500 text-white">
             New
           </Badge>
         )}
-        {country && (
-          <Badge 
-            variant="secondary" 
-            className="absolute bottom-2 right-2 text-xs"
-          >
-            {country}
-          </Badge>
-        )}
+        
+        <button 
+          className="absolute bottom-2 right-2 p-2 bg-white rounded-full shadow hover:bg-gray-50 transition-colors"
+          onClick={handleAddToCart}
+        >
+          <i className="ti ti-shopping-cart text-[#355E3B]" aria-hidden="true" />
+        </button>
       </div>
-      {name && <div className="font-medium text-gray-800 mb-1 text-sm md:text-base truncate">{name}</div>}
-      <div className="text-[#4caf50] font-semibold text-sm md:text-base">{price}</div>
+      
+      <div className="p-2">
+        <h3 className="font-medium text-sm md:text-base truncate">{name}</h3>
+        
+        {country && (
+          <p className="text-gray-500 text-xs mt-1 truncate">{country}</p>
+        )}
+        
+        <p className="font-semibold text-[#355E3B] mt-1">{price}</p>
+      </div>
     </div>
   );
 };
