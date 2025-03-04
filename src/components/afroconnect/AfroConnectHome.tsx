@@ -81,14 +81,14 @@ const AfroConnectHome: React.FC = () => {
               country="Ghana"
             />
             <ProductCard 
-              image="https://images.unsplash.com/photo-1581866692513-491d9d96ca83?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+              image="https://images.unsplash.com/photo-1528825871115-3581a5387919?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
               price="$15.99" 
               altText="African Tea"
               name="Rooibos Tea Collection"
               country="South Africa"
             />
             <ProductCard 
-              image="https://images.unsplash.com/photo-1563564691-7c7875a7c80a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+              image="https://images.unsplash.com/photo-1574175679797-9fc9eecn1a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
               price="$21.99" 
               altText="Shea Butter"
               name="Pure Shea Butter"

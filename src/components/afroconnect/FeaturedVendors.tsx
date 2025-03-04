@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 
@@ -18,7 +17,7 @@ const FeaturedVendors: React.FC = () => {
       id: "v1", 
       name: "Mama's Delicacies", 
       country: "Nigeria", 
-      image: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", 
+      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", 
       rating: 4.8, 
       verified: true,
       productCount: 38
@@ -27,7 +26,7 @@ const FeaturedVendors: React.FC = () => {
       id: "v2", 
       name: "Ghana Spice Co.", 
       country: "Ghana", 
-      image: "https://images.unsplash.com/photo-1498936178812-4b2e558d2937?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", 
+      image: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", 
       rating: 4.7, 
       verified: true,
       productCount: 45
@@ -36,7 +35,7 @@ const FeaturedVendors: React.FC = () => {
       id: "v3", 
       name: "Savannah Flavors", 
       country: "Kenya", 
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", 
+      image: "https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", 
       rating: 4.5, 
       verified: true,
       productCount: 29

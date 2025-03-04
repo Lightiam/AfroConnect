@@ -12,7 +12,7 @@ const BuyerProfile: React.FC = () => {
     phone: "+1 (555) 987-6543",
     location: "Toronto, Canada",
     joinDate: "August 2023",
-    profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    profileImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     coverImage: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=60",
     orderCount: 24,
     savedVendors: 12,
@@ -72,14 +72,14 @@ const BuyerProfile: React.FC = () => {
       id: "sp3",
       name: "Organic Dried Hibiscus",
       price: "$6.99",
-      image: "https://images.unsplash.com/photo-1573491599731-5aebc5dedb2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      image: "https://images.unsplash.com/photo-1576506295286-5cda18df9ef5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       vendor: "Savannah Flavors"
     },
     {
       id: "sp4",
       name: "Premium Egusi Seeds",
       price: "$10.99",
-      image: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      image: "https://images.unsplash.com/photo-1588371790198-64b9ab8e7446?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       vendor: "Mama's Delicacies"
     }
   ];
