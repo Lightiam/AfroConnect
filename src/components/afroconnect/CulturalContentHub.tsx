@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface ContentItem {
@@ -15,7 +16,7 @@ const CulturalContentHub: React.FC = () => {
       id: "c1",
       title: "The Art of Making Perfect Suya",
       excerpt: "Discover the secrets behind Nigeria's favorite spicy grilled meat delicacy and its traditional preparation.",
-      image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      image: "https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       category: "Meat Delicacies",
       date: "May 15, 2023"
     },
@@ -23,7 +24,7 @@ const CulturalContentHub: React.FC = () => {
       id: "c2",
       title: "Akamu: The Nutritious Nigerian Breakfast",
       excerpt: "Learn how to prepare this fermented cereal porridge loved across West Africa for its health benefits.",
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      image: "https://images.unsplash.com/photo-1590189182193-1fb15307dfb4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       category: "Breakfast Foods",
       date: "June 3, 2023"
     },
@@ -31,7 +32,7 @@ const CulturalContentHub: React.FC = () => {
       id: "c3",
       title: "Amala and Ewedu: Perfect Pairing",
       excerpt: "Master the art of making smooth Amala and complementing Ewedu soup, a treasured Yoruba combination.",
-      image: "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      image: "https://images.unsplash.com/photo-1600803907087-f56d462fd26b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       category: "Yoruba Cuisine",
       date: "July 12, 2023"
     },
@@ -39,7 +40,7 @@ const CulturalContentHub: React.FC = () => {
       id: "c4",
       title: "Regional Delicacies: Igbo vs Yoruba Foods",
       excerpt: "Explore the distinctive culinary traditions of two of Nigeria's major ethnic groups and their signature dishes.",
-      image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      image: "https://images.unsplash.com/photo-1611712142269-12b7433e28e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       category: "Cultural Cuisine",
       date: "August 8, 2023"
     }

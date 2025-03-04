@@ -17,56 +17,56 @@ const MarketplaceCategories: React.FC = () => {
       name: "Spices & Seasonings", 
       icon: "pepper-hot", 
       count: 128,
-      image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1532336414038-cf19250c5757?q=80&w=300&h=300&auto=format&fit=crop"
     },
     { 
       id: "grains", 
       name: "Grains & Flours", 
       icon: "wheat", 
       count: 95,
-      image: "https://images.unsplash.com/photo-1586201375761-83865001e8ac?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1627735747011-b8d19a1ecf6f?q=80&w=300&h=300&auto=format&fit=crop"
     },
     { 
       id: "suya", 
       name: "Suya & Grilled Meats", 
       icon: "flame", 
       count: 67,
-      image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=300&h=300&auto=format&fit=crop"
     },
     { 
       id: "akamu", 
       name: "Akamu & Porridges", 
       icon: "bowl", 
       count: 54,
-      image: "https://images.unsplash.com/photo-1495461199391-8c39ab674295?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1590189182193-1fb15307dfb4?q=80&w=300&h=300&auto=format&fit=crop"
     },
     { 
       id: "amala", 
       name: "Amala & Swallows", 
       icon: "utensils", 
       count: 81,
-      image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1600803907087-f56d462fd26b?q=80&w=300&h=300&auto=format&fit=crop"
     },
     { 
       id: "igbo", 
       name: "Igbo Delicacies", 
       icon: "leafy-green", 
       count: 93,
-      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1611712142269-12b7433e28e9?q=80&w=300&h=300&auto=format&fit=crop"
     },
     { 
       id: "yoruba", 
       name: "Yoruba Delicacies", 
       icon: "soup", 
       count: 89,
-      image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1536304575999-cce3da162998?q=80&w=300&h=300&auto=format&fit=crop"
     },
     { 
       id: "soups", 
       name: "Soups & Stews", 
       icon: "cooking-pot", 
       count: 112,
-      image: "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?q=80&w=300&h=300&auto=format&fit=crop"
     },
   ];
 
