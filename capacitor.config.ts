@@ -11,9 +11,17 @@ const config: CapacitorConfig = {
   },
   ios: {
     contentInset: 'always',
+    scheme: 'AfroConnect',
+    backgroundColor: '#355E3B',
+    statusBarStyle: 'dark'
   },
   android: {
-    backgroundColor: "#355E3B"
+    backgroundColor: "#355E3B",
+    buildOptions: {
+      releaseType: 'AAB',
+      keystorePath: 'release.keystore',
+      keystoreAlias: 'afroconnect',
+    }
   },
   plugins: {
     SplashScreen: {

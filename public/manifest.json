@@ -7,16 +7,26 @@
   "background_color": "#355E3B",
   "theme_color": "#355E3B",
   "description": "Connecting Africa to the world",
+  "orientation": "portrait",
+  "scope": "/",
   "icons": [
     {
       "src": "lovable-uploads/e6dee00a-5d92-435b-a385-666bdf0a083b.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "lovable-uploads/e6dee00a-5d92-435b-a385-666bdf0a083b.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "lovable-uploads/e6dee00a-5d92-435b-a385-666bdf0a083b.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

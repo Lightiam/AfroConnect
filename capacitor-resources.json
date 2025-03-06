@@ -5,11 +5,24 @@
   "version": "1.0.0",
   "icon": {
     "source": "public/lovable-uploads/e6dee00a-5d92-435b-a385-666bdf0a083b.png",
-    "background": "#355E3B"
+    "background": "#355E3B",
+    "resizeOptions": {
+      "width": 1024,
+      "height": 1024,
+      "fit": "contain"
+    }
   },
   "splash": {
     "source": "public/lovable-uploads/e6dee00a-5d92-435b-a385-666bdf0a083b.png",
     "background": "#355E3B",
     "resize": "cover"
+  },
+  "platforms": {
+    "ios": {
+      "appStoreUrl": ""
+    },
+    "android": {
+      "playStoreUrl": ""
+    }
   }
 }
