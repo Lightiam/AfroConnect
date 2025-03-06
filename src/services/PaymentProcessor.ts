@@ -3,6 +3,20 @@ import { loadStripe } from '@stripe/stripe-js';
 import type { PaymentResult, OrderDetails, PaymentDetails } from './PaymentService';
 import { APIService } from './APIService';
 
+// Define response data types for API calls
+interface StripePaymentIntentResponse {
+  clientSecret: string;
+}
+
+interface CardPaymentResponse {
+  transactionId: string;
+}
+
+interface PayPalPaymentResponse {
+  paymentId: string;
+  approvalUrl: string;
+}
+
 // Initialize Stripe (using public key - this is safe to be in client-side code)
 const stripePublicKey = 'pk_test_51OxtXyJGmDRePFQkLJUvPyQnTQcKkB7pCnDGBv6Wjt8ZrCULVuD9MZJFSgP0lYk9jGZiA2c7xXTZwrCWMYBgPHla00vB2f4r1v';
 let stripePromise: Promise<any> | null = null;
@@ -24,7 +38,7 @@ export const processStripePayment = async (
     console.log('Processing Stripe payment:', { amount, orderDetails });
     
     // Step 1: Create a payment intent on the server
-    const paymentIntentResponse = await APIService.post('/api/payments/create-payment-intent', {
+    const paymentIntentResponse = await APIService.post<StripePaymentIntentResponse>('/api/payments/create-payment-intent', {
       amount: Math.round(amount * 100), // Convert to cents for Stripe
       currency: 'usd',
       orderId: orderDetails.orderId,
@@ -35,14 +49,20 @@ export const processStripePayment = async (
       }
     });
     
-    if (!paymentIntentResponse.success || !paymentIntentResponse.data.clientSecret) {
+    if (!paymentIntentResponse.success || !paymentIntentResponse.data) {
       throw new Error('Failed to create payment intent');
+    }
+    
+    const clientSecret = (paymentIntentResponse.data as StripePaymentIntentResponse).clientSecret;
+    
+    if (!clientSecret) {
+      throw new Error('No client secret returned from server');
     }
     
     // Step 2: Confirm the payment with Stripe.js on the client
     const stripe = await getStripeInstance();
     const { error, paymentIntent } = await stripe.confirmCardPayment(
-      paymentIntentResponse.data.clientSecret,
+      clientSecret,
       {
         payment_method: {
           card: {
@@ -123,7 +143,7 @@ export const processCardPayment = async (
     }
     
     // Process payment through the payment gateway API
-    const paymentResponse = await APIService.post('/api/payments/process-card', {
+    const paymentResponse = await APIService.post<CardPaymentResponse>('/api/payments/process-card', {
       amount,
       currency: 'usd',
       cardNumber: paymentDetails.cardNumber?.replace(/\s/g, ''),
@@ -135,17 +155,19 @@ export const processCardPayment = async (
       cardType
     });
     
-    if (paymentResponse.success) {
+    if (paymentResponse.success && paymentResponse.data) {
+      const response = paymentResponse.data as CardPaymentResponse;
+      
       // Confirm order on the server
       await APIService.post('/api/orders/confirm', {
         orderId: orderDetails.orderId,
-        transactionId: paymentResponse.data.transactionId,
+        transactionId: response.transactionId,
         amount: amount,
       });
       
       return {
         success: true,
-        transactionId: paymentResponse.data.transactionId,
+        transactionId: response.transactionId,
         timestamp: new Date().toISOString(),
         provider: cardType
       };
@@ -175,7 +197,7 @@ export const processPayPalPayment = async (
     console.log('Processing PayPal payment:', { amount, orderDetails });
     
     // Create PayPal payment on the server
-    const paymentResponse = await APIService.post('/api/payments/create-paypal-payment', {
+    const paymentResponse = await APIService.post<PayPalPaymentResponse>('/api/payments/create-paypal-payment', {
       amount,
       currency: 'usd',
       orderId: orderDetails.orderId,
@@ -183,17 +205,23 @@ export const processPayPalPayment = async (
       cancelUrl: `${window.location.origin}/checkout`
     });
     
-    if (!paymentResponse.success || !paymentResponse.data.approvalUrl) {
+    if (!paymentResponse.success || !paymentResponse.data) {
       throw new Error('Failed to create PayPal payment');
     }
     
+    const paypalData = paymentResponse.data as PayPalPaymentResponse;
+    
+    if (!paypalData.approvalUrl) {
+      throw new Error('No approval URL returned from server');
+    }
+    
     // Redirect the user to PayPal approval URL
-    window.location.href = paymentResponse.data.approvalUrl;
+    window.location.href = paypalData.approvalUrl;
     
     // This will never be reached due to redirect, but required for type safety
     return {
       success: true,
-      transactionId: paymentResponse.data.paymentId,
+      transactionId: paypalData.paymentId,
       provider: 'paypal'
     };
   } catch (error) {

@@ -12,6 +12,16 @@ interface User {
   token?: string; // JWT token
 }
 
+// Define response data types for API calls
+interface AuthResponse {
+  id: string;
+  name: string;
+  email: string;
+  isVendor: boolean;
+  avatar?: string;
+  token: string;
+}
+
 interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
@@ -51,17 +61,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setIsLoading(true);
       
       // In production, make a real API call
-      const response = await APIService.post('/api/auth/signin', { email, password });
+      const response = await APIService.post<AuthResponse>('/api/auth/signin', { email, password });
       
       if (response.success && response.data) {
+        // Type assertion to ensure TypeScript knows the data structure
+        const authData = response.data as AuthResponse;
+        
         // Store the user with the JWT token
         const authenticatedUser: User = {
-          id: response.data.id,
-          name: response.data.name,
-          email: response.data.email,
-          isVendor: response.data.isVendor,
-          avatar: response.data.avatar,
-          token: response.data.token // Save the JWT token
+          id: authData.id,
+          name: authData.name,
+          email: authData.email,
+          isVendor: authData.isVendor,
+          avatar: authData.avatar,
+          token: authData.token // Save the JWT token
         };
         
         setUser(authenticatedUser);
@@ -104,7 +117,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setIsLoading(true);
       
       // In production, make a real API call
-      const response = await APIService.post('/api/auth/signup', {
+      const response = await APIService.post<AuthResponse>('/api/auth/signup', {
         name,
         email,
         password,
@@ -112,14 +125,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       });
       
       if (response.success && response.data) {
+        // Type assertion to ensure TypeScript knows the data structure
+        const authData = response.data as AuthResponse;
+        
         // Store the user with the JWT token
         const newUser: User = {
-          id: response.data.id,
-          name: response.data.name,
-          email: response.data.email,
-          isVendor: response.data.isVendor,
-          avatar: response.data.avatar,
-          token: response.data.token // Save the JWT token
+          id: authData.id,
+          name: authData.name,
+          email: authData.email,
+          isVendor: authData.isVendor,
+          avatar: authData.avatar,
+          token: authData.token // Save the JWT token
         };
         
         setUser(newUser);
