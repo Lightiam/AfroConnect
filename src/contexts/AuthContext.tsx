@@ -1,6 +1,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import { APIService } from '@/services/APIService';
 
 interface User {
   id: string;
@@ -8,6 +9,7 @@ interface User {
   email: string;
   isVendor: boolean;
   avatar?: string;
+  token?: string; // JWT token
 }
 
 interface AuthContextType {
@@ -48,26 +50,26 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       setIsLoading(true);
       
-      // Simulate API call delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // In production, make a real API call
+      const response = await APIService.post('/api/auth/signin', { email, password });
       
-      // Mock validation - in a real app, this would call an API
-      if (email && password) {
-        // For demo, we'll create a mock user based on the email
-        const mockUser: User = {
-          id: `user-${Math.random().toString(36).substring(2, 10)}`,
-          name: email.split('@')[0],
-          email,
-          isVendor: email.includes('vendor'),
-          avatar: `https://ui-avatars.com/api/?name=${email.split('@')[0]}&background=random`,
+      if (response.success && response.data) {
+        // Store the user with the JWT token
+        const authenticatedUser: User = {
+          id: response.data.id,
+          name: response.data.name,
+          email: response.data.email,
+          isVendor: response.data.isVendor,
+          avatar: response.data.avatar,
+          token: response.data.token // Save the JWT token
         };
         
-        setUser(mockUser);
-        localStorage.setItem('afroconnect-user', JSON.stringify(mockUser));
+        setUser(authenticatedUser);
+        localStorage.setItem('afroconnect-user', JSON.stringify(authenticatedUser));
         
         toast({
           title: "Sign in successful",
-          description: `Welcome back, ${mockUser.name}!`,
+          description: `Welcome back, ${authenticatedUser.name}!`,
         });
         
         return true;
@@ -75,7 +77,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       
       toast({
         title: "Sign in failed",
-        description: "Invalid credentials. Please try again.",
+        description: response.message || "Invalid credentials. Please try again.",
         variant: "destructive",
       });
       
@@ -101,18 +103,23 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       setIsLoading(true);
       
-      // Simulate API call delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // In production, make a real API call
+      const response = await APIService.post('/api/auth/signup', {
+        name,
+        email,
+        password,
+        isVendor
+      });
       
-      // Mock validation - in a real app, this would call an API
-      if (name && email && password) {
-        // For demo, we'll create a user based on the provided info
+      if (response.success && response.data) {
+        // Store the user with the JWT token
         const newUser: User = {
-          id: `user-${Math.random().toString(36).substring(2, 10)}`,
-          name,
-          email,
-          isVendor,
-          avatar: `https://ui-avatars.com/api/?name=${name}&background=random`,
+          id: response.data.id,
+          name: response.data.name,
+          email: response.data.email,
+          isVendor: response.data.isVendor,
+          avatar: response.data.avatar,
+          token: response.data.token // Save the JWT token
         };
         
         setUser(newUser);
@@ -128,7 +135,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       
       toast({
         title: "Sign up failed",
-        description: "Please fill all required fields.",
+        description: response.message || "Registration failed. Please try again.",
         variant: "destructive",
       });
       
@@ -146,6 +153,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const signOut = () => {
+    // In a production app, you might want to invalidate the token on the server
+    APIService.post('/api/auth/signout').catch(err => {
+      console.error('Error signing out:', err);
+    });
+    
     setUser(null);
     localStorage.removeItem('afroconnect-user');
     toast({
