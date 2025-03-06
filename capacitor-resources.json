@@ -1,0 +1,15 @@
+
+{
+  "name": "AfroConnect",
+  "description": "Connecting Africa to the world",
+  "version": "1.0.0",
+  "icon": {
+    "source": "public/lovable-uploads/e6dee00a-5d92-435b-a385-666bdf0a083b.png",
+    "background": "#355E3B"
+  },
+  "splash": {
+    "source": "public/lovable-uploads/e6dee00a-5d92-435b-a385-666bdf0a083b.png",
+    "background": "#355E3B",
+    "resize": "cover"
+  }
+}
