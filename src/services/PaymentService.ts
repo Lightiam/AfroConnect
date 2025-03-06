@@ -1,8 +1,12 @@
 
 // Payment processing service for AfroConnect marketplace
-// This is a mock implementation - in production, you would integrate with a real payment processor
+import { 
+  processStripePayment, 
+  processCardPayment,
+  processPayPalPayment
+} from './PaymentProcessor';
 
-export type PaymentMethod = 'credit_card' | 'debit_card' | 'mobile_money' | 'bank_transfer';
+export type PaymentMethod = 'credit_card' | 'debit_card' | 'mobile_money' | 'bank_transfer' | 'stripe' | 'paypal';
 
 export interface PaymentDetails {
   cardNumber?: string;
@@ -13,6 +17,7 @@ export interface PaymentDetails {
   provider?: string;
   accountNumber?: string;
   bankName?: string;
+  email?: string; // For PayPal
 }
 
 export interface OrderDetails {
@@ -43,6 +48,7 @@ export interface PaymentResult {
   transactionId?: string;
   timestamp?: string;
   error?: string;
+  provider?: string; // Added to track which payment provider was used
 }
 
 // Generate a random transaction ID
@@ -50,7 +56,7 @@ const generateTransactionId = () => {
   return 'txn_' + Math.random().toString(36).substring(2, 15);
 };
 
-// Process a payment (mock implementation)
+// Process a payment
 export const processPayment = async (
   amount: number,
   paymentMethod: PaymentMethod,
@@ -59,6 +65,38 @@ export const processPayment = async (
 ): Promise<PaymentResult> => {
   console.log('Processing payment:', { amount, paymentMethod, orderDetails });
   
+  // Route to the appropriate payment processor based on method
+  switch (paymentMethod) {
+    case 'stripe':
+      return processStripePayment(amount, paymentDetails, orderDetails);
+      
+    case 'credit_card':
+    case 'debit_card':
+      return processCardPayment(amount, paymentDetails, orderDetails);
+      
+    case 'paypal':
+      return processPayPalPayment(amount, orderDetails);
+      
+    case 'mobile_money':
+    case 'bank_transfer':
+      // Use existing implementation for these methods
+      return processLegacyPayment(amount, paymentMethod, paymentDetails, orderDetails);
+      
+    default:
+      return {
+        success: false,
+        error: 'Unsupported payment method',
+      };
+  }
+};
+
+// Legacy payment processor (for mobile money and bank transfer)
+const processLegacyPayment = async (
+  amount: number,
+  paymentMethod: PaymentMethod,
+  paymentDetails: PaymentDetails,
+  orderDetails: OrderDetails
+): Promise<PaymentResult> => {
   // Simulate API call delay
   await new Promise(resolve => setTimeout(resolve, 1500));
   
@@ -71,12 +109,14 @@ export const processPayment = async (
     return {
       success: true,
       transactionId: generateTransactionId(),
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      provider: paymentMethod
     };
   } else {
     return {
       success: false,
-      error: 'Payment processor declined the transaction. Please try again or use a different payment method.'
+      error: 'Payment processor declined the transaction. Please try again or use a different payment method.',
+      provider: paymentMethod
     };
   }
 };
@@ -106,4 +146,21 @@ export const formatCurrency = (amount: number): string => {
     style: 'currency',
     currency: 'USD',
   });
+};
+
+// Detect credit card type from number
+export const detectCardType = (cardNumber: string): string => {
+  const cleanedNumber = cardNumber.replace(/\s+/g, '');
+  
+  if (/^4\d{12}(?:\d{3})?$/.test(cleanedNumber)) {
+    return 'visa';
+  } else if (/^5[1-5]\d{14}$/.test(cleanedNumber)) {
+    return 'mastercard';
+  } else if (/^3[47]\d{13}$/.test(cleanedNumber)) {
+    return 'amex';
+  } else if (/^6(?:011|5\d{2})\d{12}$/.test(cleanedNumber)) {
+    return 'discover';
+  } else {
+    return 'unknown';
+  }
 };
