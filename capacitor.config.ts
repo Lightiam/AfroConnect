@@ -2,7 +2,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'app.lovable.690c52b9750347c2a0088f902234b7ec',
+  appId: 'com.afroconnect.app',
   appName: 'AfroConnect',
   webDir: 'dist',
   server: {
