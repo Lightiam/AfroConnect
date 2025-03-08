@@ -28,7 +28,7 @@ const MarketplaceCategories: React.FC = () => {
     },
     { 
       id: "kuli-kuli", 
-      name: "Kali-kuli", 
+      name: "Kuli-kuli", 
       icon: "nut", 
       count: 67,
       image: "/lovable-uploads/6317c600-e26d-482d-b363-778bc7cec112.png" 
