@@ -17,18 +17,18 @@ const FeaturedVendors: React.FC = () => {
   const vendors: Vendor[] = [
     { 
       id: "v1", 
-      name: "Mama's Delicacies", 
+      name: "Jollof Rice", 
       country: "Nigeria", 
-      image: "/lovable-uploads/c8af5427-bb1e-4f30-ae4d-79adfe1868f0.png", // Updated to Savannah Flavors image
+      image: "/lovable-uploads/c8af5427-bb1e-4f30-ae4d-79adfe1868f0.png",
       rating: 4.8, 
       verified: true,
       productCount: 38
     },
     { 
       id: "v2", 
-      name: "Ghana Spice Co.", 
+      name: "Pounded yam & Egusi", 
       country: "Ghana", 
-      image: "/lovable-uploads/1c867b3c-085c-4480-873e-6b4c441044cf.png", // Updated to Pounded Yam image
+      image: "/lovable-uploads/1c867b3c-085c-4480-873e-6b4c441044cf.png",
       rating: 4.7, 
       verified: true,
       productCount: 45
