@@ -17,56 +17,56 @@ const MarketplaceCategories: React.FC = () => {
       name: "Spices & Seasonings", 
       icon: "pepper-hot", 
       count: 128,
-      image: "https://images.unsplash.com/photo-1532336414038-cf19250c5757?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "/lovable-uploads/40638a92-9f47-4e7b-86ac-37f9a06ab091.png" // Ogbono seeds
     },
     { 
       id: "grains", 
       name: "Grains & Flours", 
       icon: "wheat", 
       count: 95,
-      image: "https://images.unsplash.com/photo-1627735747011-b8d19a1ecf6f?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "/lovable-uploads/19fdb9d5-c004-4ac2-bf5e-1741ec7e2544.png" // Ofada Rice
     },
     { 
-      id: "suya", 
-      name: "Suya & Grilled Meats", 
-      icon: "flame", 
+      id: "proteins", 
+      name: "Proteins", 
+      icon: "fish", 
       count: 67,
-      image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "/lovable-uploads/c10a65bf-dcd6-44d2-af29-84eb412554a9.png" // Snail
     },
     { 
-      id: "akamu", 
-      name: "Akamu & Porridges", 
+      id: "flours", 
+      name: "Flours & Starches", 
       icon: "bowl", 
       count: 54,
-      image: "https://images.unsplash.com/photo-1590189182193-1fb15307dfb4?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "/lovable-uploads/06d81f7b-34d0-434d-a060-a20f213032bb.png" // Garri
     },
     { 
-      id: "amala", 
-      name: "Amala & Swallows", 
-      icon: "utensils", 
+      id: "seeds", 
+      name: "Seeds & Nuts", 
+      icon: "seedling", 
       count: 81,
-      image: "https://images.unsplash.com/photo-1600803907087-f56d462fd26b?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "/lovable-uploads/46c1e7ab-95cf-400d-b45d-0a5764572031.png" // Egusi Seeds
     },
     { 
-      id: "igbo", 
-      name: "Igbo Delicacies", 
-      icon: "leafy-green", 
+      id: "dried-fish", 
+      name: "Dried Fish", 
+      icon: "fish", 
       count: 93,
-      image: "https://images.unsplash.com/photo-1611712142269-12b7433e28e9?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "/lovable-uploads/a2bae456-bf4b-488a-a766-8bb8117a55ee.png" // Dried Fish
     },
     { 
-      id: "yoruba", 
-      name: "Yoruba Delicacies", 
-      icon: "soup", 
+      id: "oils", 
+      name: "Oils & Sauces", 
+      icon: "bottle", 
       count: 89,
-      image: "https://images.unsplash.com/photo-1536304575999-cce3da162998?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "/lovable-uploads/72b36f68-4014-47c5-96e1-3995b4edcd9c.png" // Palm Oil
     },
     { 
-      id: "soups", 
-      name: "Soups & Stews", 
-      icon: "cooking-pot", 
+      id: "roots", 
+      name: "Roots & Tubers", 
+      icon: "potato", 
       count: 112,
-      image: "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?q=80&w=300&h=300&auto=format&fit=crop"
+      image: "/lovable-uploads/b7a26887-c963-4ad3-aeb2-e681b27a056a.png" // Yam Tubers
     },
   ];
 
