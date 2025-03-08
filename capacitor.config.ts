@@ -6,7 +6,7 @@ const config: CapacitorConfig = {
   appName: 'AfroConnect',
   webDir: 'dist',
   server: {
-    url: 'https://690c52b9-7503-47c2-a008-8f902234b7ec.lovableproject.com?forceHideBadge=true',
+    androidScheme: 'https',
     cleartext: true
   },
   ios: {
