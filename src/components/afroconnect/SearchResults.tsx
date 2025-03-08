@@ -2,6 +2,8 @@
 import React from "react";
 import { SearchResult } from "@/services/AISearchService";
 import { Sparkles, X, ShoppingCart } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
+import { toast } from "sonner";
 
 interface SearchResultsProps {
   results: SearchResult[];
@@ -10,6 +12,23 @@ interface SearchResultsProps {
 }
 
 const SearchResults: React.FC<SearchResultsProps> = ({ results, isLoading, onClose }) => {
+  const { addItem } = useCart();
+
+  const handleAddToCart = (result: SearchResult) => {
+    addItem({
+      id: result.id,
+      name: result.name,
+      price: result.price,
+      quantity: 1,
+      image: result.image || "",
+      vendor: result.category
+    });
+
+    toast("Added to cart", {
+      description: `${result.name} has been added to your cart`
+    });
+  };
+
   if (isLoading) {
     return (
       <div className="absolute top-full left-0 right-0 bg-white rounded-b-xl shadow-lg mt-1 p-3 md:p-4 z-10">
@@ -30,7 +49,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results, isLoading, onClo
       <div className="flex justify-between items-center p-2 md:p-3 border-b">
         <h3 className="font-medium text-gray-700 flex items-center text-sm md:text-base">
           <Sparkles size={14} className="text-[#355E3B] mr-1 md:mr-2" />
-          Search Results
+          African Food Ingredients
         </h3>
         <button 
           onClick={onClose}
@@ -41,7 +60,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results, isLoading, onClo
       </div>
       <div className="max-h-60 md:max-h-72 overflow-y-auto">
         {results.map((result) => (
-          <div key={result.id} className="p-2 md:p-3 border-b hover:bg-gray-50 cursor-pointer">
+          <div key={result.id} className="p-2 md:p-3 border-b hover:bg-gray-50">
             <div className="flex items-center">
               {result.image && (
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 rounded mr-2 md:mr-3 flex-shrink-0">
@@ -63,7 +82,10 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results, isLoading, onClo
                 </div>
               </div>
             </div>
-            <button className="mt-2 w-full text-xs md:text-sm bg-[#355E3B] text-white rounded-lg py-1 px-2 flex items-center justify-center">
+            <button 
+              className="mt-2 w-full text-xs md:text-sm bg-[#355E3B] text-white rounded-lg py-1 px-2 flex items-center justify-center"
+              onClick={() => handleAddToCart(result)}
+            >
               <ShoppingCart size={12} className="mr-1" />
               Add to Cart
             </button>
