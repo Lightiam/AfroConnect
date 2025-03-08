@@ -1,4 +1,5 @@
-package com.example.app;
+
+package com.afroconnect.app;
 
 import com.getcapacitor.BridgeActivity;
 

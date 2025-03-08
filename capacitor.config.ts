@@ -1,7 +1,7 @@
+
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-<<<<<<< Updated upstream
   appId: 'com.afroconnect.app',
   appName: 'AfroConnect',
   webDir: 'dist',
@@ -35,11 +35,6 @@ const config: CapacitorConfig = {
       splashImmersive: true
     }
   }
-=======
-  appId: 'com.example.app',
-  appName: ' AfroConnect',
-  webDir: 'dist'
->>>>>>> Stashed changes
 };
 
 export default config;

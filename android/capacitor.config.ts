@@ -1,9 +1,10 @@
+
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.afroconnect.app',
-  appName: 'Afroconnect',
-  webDir: 'www'
+  appName: 'AfroConnect',
+  webDir: 'dist'
 };
 
 export default config;
