@@ -31,7 +31,7 @@ const MarketplaceCategories: React.FC = () => {
       name: "Kuli-kuli", 
       icon: "nut", 
       count: 67,
-      image: "/lovable-uploads/6317c600-e26d-482d-b363-778bc7cec112.png" 
+      image: "/lovable-uploads/886cd2bb-3e33-46b7-af02-952c2938e6fd.png" 
     },
     { 
       id: "beans", 
@@ -74,6 +74,13 @@ const MarketplaceCategories: React.FC = () => {
       icon: "wheat", 
       count: 75,
       image: "/lovable-uploads/be9ec05d-bf4e-45ac-8c90-5b366c5a57f8.png" 
+    },
+    { 
+      id: "kilishi", 
+      name: "Kilishi", 
+      icon: "beef", 
+      count: 83,
+      image: "/lovable-uploads/33ba3b61-e137-4def-9737-fe32ae435a50.png" 
     },
   ];
 
