@@ -15,87 +15,79 @@ export const performAISearch = async (query: string): Promise<SearchResult[]> =>
   // Simulate API call delay
   await new Promise(resolve => setTimeout(resolve, 800));
   
-  // Food items data based on the provided images
+  // African food items data based on the provided images
   const results: SearchResult[] = [
     {
       id: "1",
-      name: "African Snails",
-      description: "Traditional African snails for authentic soups and stews",
-      category: "Proteins",
-      price: 19.99,
-      image: "/lovable-uploads/c10a65bf-dcd6-44d2-af29-84eb412554a9.png"
+      name: "African Spices",
+      description: "Variety of colorful African spices used in traditional cooking",
+      category: "Spices",
+      price: 9.99,
+      image: "/lovable-uploads/e2046a7c-4fca-47c8-8ad1-29b94499528b.png"
     },
     {
       id: "2",
-      name: "Ogbono Seeds",
-      description: "Premium quality ogbono seeds for authentic soups",
-      category: "Spices & Seasonings",
-      price: 11.99,
-      image: "/lovable-uploads/40638a92-9f47-4e7b-86ac-37f9a06ab091.png"
+      name: "Dried Crayfish",
+      description: "Dried crayfish for rich flavoring in soups and sauces",
+      category: "Crayfishes",
+      price: 12.99,
+      image: "/lovable-uploads/f5843af2-7f2f-4fc0-98dc-7e5d68b4c289.png"
     },
     {
       id: "3",
-      name: "Dried Fish",
-      description: "Sustainably sourced dried fish for your traditional recipes",
-      category: "Proteins",
-      price: 16.99,
-      image: "/lovable-uploads/a2bae456-bf4b-488a-a766-8bb8117a55ee.png"
+      name: "Kali-kuli",
+      description: "Crunchy groundnut snack common in West African cuisine",
+      category: "Snacks",
+      price: 7.49,
+      image: "/lovable-uploads/6317c600-e26d-482d-b363-778bc7cec112.png"
     },
     {
       id: "4",
-      name: "Premium Garri",
-      description: "High-quality fermented and roasted cassava flour",
-      category: "Flours & Grains",
-      price: 8.99,
-      image: "/lovable-uploads/06d81f7b-34d0-434d-a060-a20f213032bb.png"
+      name: "African Beans",
+      description: "Various beans used in traditional stews and porridges",
+      category: "Beans",
+      price: 6.99,
+      image: "/lovable-uploads/94f271c3-e5f9-4e10-b1d9-796b15b004dc.png"
     },
     {
       id: "5",
-      name: "Egusi Seeds",
-      description: "Ground melon seeds for authentic Nigerian soups",
-      category: "Spices & Seasonings",
-      price: 13.50,
-      image: "/lovable-uploads/46c1e7ab-95cf-400d-b45d-0a5764572031.png"
+      name: "Koko-Yam",
+      description: "Starchy root vegetable used in soups and as a side dish",
+      category: "Roots & Tubers",
+      price: 8.99,
+      image: "/lovable-uploads/c98b6122-f393-452b-8b3b-3ada787ec493.png"
     },
     {
       id: "6",
-      name: "Ofada Rice",
-      description: "Traditional Nigerian rice variety with natural aroma",
-      category: "Flours & Grains",
-      price: 9.99,
-      image: "/lovable-uploads/19fdb9d5-c004-4ac2-bf5e-1741ec7e2544.png"
+      name: "Plantain",
+      description: "Versatile fruit that can be fried, boiled, or roasted",
+      category: "Fruits",
+      price: 5.99,
+      image: "/lovable-uploads/4d46f94d-a008-490a-b711-da435c1c5db7.png"
     },
     {
       id: "7",
-      name: "African Spice Variety",
-      description: "Assorted spices and ingredients for traditional African cooking",
-      category: "Spices & Seasonings",
-      price: 15.99,
-      image: "/lovable-uploads/696dad7a-0f8d-4dd9-9d75-1a049a39be5b.png"
+      name: "Amala Powder",
+      description: "Yam flour used to make a popular Nigerian swallow food",
+      category: "Flours",
+      price: 10.49,
+      image: "/lovable-uploads/d1e3de22-092b-4a29-ae96-63f6717da2f4.png"
     },
     {
       id: "8",
-      name: "Red Palm Oil",
-      description: "Traditional West African palm oil for authentic cooking",
-      category: "Oils & Sauces",
-      price: 14.99,
-      image: "/lovable-uploads/72b36f68-4014-47c5-96e1-3995b4edcd9c.png"
+      name: "Tiger Nuts",
+      description: "Small, sweet tubers used for snacking or making tiger nut milk",
+      category: "Nuts & Seeds",
+      price: 8.49,
+      image: "/lovable-uploads/7d207088-29c0-40d0-8e84-b1c2f16806b5.png"
     },
     {
       id: "9",
-      name: "Yam Tubers",
-      description: "Fresh yam tubers imported directly from West Africa",
-      category: "Roots & Tubers",
-      price: 22.99,
-      image: "/lovable-uploads/b7a26887-c963-4ad3-aeb2-e681b27a056a.png"
-    },
-    {
-      id: "10",
-      name: "African Beans & Grains Set",
-      description: "Assortment of beans and grains for authentic African dishes",
-      category: "Flours & Grains",
-      price: 18.99,
-      image: "/lovable-uploads/859ab634-b5b1-479c-8b09-5eb329e1700e.png"
+      name: "Acha Grain",
+      description: "Ancient African grain with a nutty flavor, also known as fonio",
+      category: "Grains",
+      price: 11.99,
+      image: "/lovable-uploads/be9ec05d-bf4e-45ac-8c90-5b366c5a57f8.png"
     }
   ];
   
@@ -116,11 +108,11 @@ export const performVoiceSearch = async (audioBlob: Blob): Promise<string> => {
   
   // Return a mock transcription result related to African food ingredients
   const mockTranscriptions = [
-    "african snails",
-    "ogbono seeds",
-    "dried fish",
-    "garri",
-    "egusi seeds"
+    "african spices",
+    "crayfish",
+    "kali-kuli",
+    "beans",
+    "koko-yam"
   ];
   
   return mockTranscriptions[Math.floor(Math.random() * mockTranscriptions.length)];

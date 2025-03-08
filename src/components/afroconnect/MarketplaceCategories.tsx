@@ -14,59 +14,66 @@ const MarketplaceCategories: React.FC = () => {
   const categories: Category[] = [
     { 
       id: "spices", 
-      name: "Spices & Seasonings", 
+      name: "Spices", 
       icon: "pepper-hot", 
       count: 128,
-      image: "/lovable-uploads/40638a92-9f47-4e7b-86ac-37f9a06ab091.png" // Ogbono seeds
+      image: "/lovable-uploads/e2046a7c-4fca-47c8-8ad1-29b94499528b.png" 
     },
     { 
-      id: "grains", 
-      name: "Grains & Flours", 
-      icon: "wheat", 
+      id: "crayfish", 
+      name: "Crayfishes", 
+      icon: "fish", 
       count: 95,
-      image: "/lovable-uploads/19fdb9d5-c004-4ac2-bf5e-1741ec7e2544.png" // Ofada Rice
+      image: "/lovable-uploads/f5843af2-7f2f-4fc0-98dc-7e5d68b4c289.png" 
     },
     { 
-      id: "proteins", 
-      name: "Proteins", 
-      icon: "fish", 
+      id: "kuli-kuli", 
+      name: "Kali-kuli", 
+      icon: "nut", 
       count: 67,
-      image: "/lovable-uploads/c10a65bf-dcd6-44d2-af29-84eb412554a9.png" // Snail
+      image: "/lovable-uploads/6317c600-e26d-482d-b363-778bc7cec112.png" 
     },
     { 
-      id: "flours", 
-      name: "Flours & Starches", 
-      icon: "bowl", 
+      id: "beans", 
+      name: "Beans", 
+      icon: "bean", 
       count: 54,
-      image: "/lovable-uploads/06d81f7b-34d0-434d-a060-a20f213032bb.png" // Garri
+      image: "/lovable-uploads/94f271c3-e5f9-4e10-b1d9-796b15b004dc.png" 
     },
     { 
-      id: "seeds", 
-      name: "Seeds & Nuts", 
-      icon: "seedling", 
+      id: "koko-yam", 
+      name: "Koko-Yam", 
+      icon: "carrot", 
       count: 81,
-      image: "/lovable-uploads/46c1e7ab-95cf-400d-b45d-0a5764572031.png" // Egusi Seeds
+      image: "/lovable-uploads/c98b6122-f393-452b-8b3b-3ada787ec493.png" 
     },
     { 
-      id: "dried-fish", 
-      name: "Dried Fish", 
-      icon: "fish", 
+      id: "plantain", 
+      name: "Plantain", 
+      icon: "leaf", 
       count: 93,
-      image: "/lovable-uploads/a2bae456-bf4b-488a-a766-8bb8117a55ee.png" // Dried Fish
+      image: "/lovable-uploads/4d46f94d-a008-490a-b711-da435c1c5db7.png" 
     },
     { 
-      id: "oils", 
-      name: "Oils & Sauces", 
-      icon: "bottle", 
+      id: "amala", 
+      name: "Amala Powder", 
+      icon: "wheat", 
       count: 89,
-      image: "/lovable-uploads/72b36f68-4014-47c5-96e1-3995b4edcd9c.png" // Palm Oil
+      image: "/lovable-uploads/d1e3de22-092b-4a29-ae96-63f6717da2f4.png" 
     },
     { 
-      id: "roots", 
-      name: "Roots & Tubers", 
-      icon: "potato", 
+      id: "tiger-nuts", 
+      name: "Tiger Nuts", 
+      icon: "seedling", 
       count: 112,
-      image: "/lovable-uploads/b7a26887-c963-4ad3-aeb2-e681b27a056a.png" // Yam Tubers
+      image: "/lovable-uploads/7d207088-29c0-40d0-8e84-b1c2f16806b5.png" 
+    },
+    { 
+      id: "acha", 
+      name: "Acha", 
+      icon: "wheat", 
+      count: 75,
+      image: "/lovable-uploads/be9ec05d-bf4e-45ac-8c90-5b366c5a57f8.png" 
     },
   ];
 

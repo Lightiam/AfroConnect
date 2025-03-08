@@ -12,64 +12,58 @@ interface FoodItem {
 const AfricanFoodCategories: React.FC = () => {
   const foodItems: FoodItem[] = [
     {
-      id: "snail",
-      name: "Snail",
-      image: "/lovable-uploads/c10a65bf-dcd6-44d2-af29-84eb412554a9.png",
-      description: "Traditional African snails, rich in protein and used in many stews and soups."
+      id: "spices",
+      name: "Spices",
+      image: "/lovable-uploads/e2046a7c-4fca-47c8-8ad1-29b94499528b.png",
+      description: "Variety of colorful African spices used in traditional cooking."
     },
     {
-      id: "ogbono",
-      name: "Ogbono Seed",
-      image: "/lovable-uploads/40638a92-9f47-4e7b-86ac-37f9a06ab091.png",
-      description: "Seeds used to make the popular Ogbono soup, known for its mucilaginous (slimy) texture."
+      id: "crayfish",
+      name: "Crayfishes",
+      image: "/lovable-uploads/f5843af2-7f2f-4fc0-98dc-7e5d68b4c289.png",
+      description: "Dried crayfish for rich flavoring in soups and sauces."
     },
     {
-      id: "fish",
-      name: "Fish",
-      image: "/lovable-uploads/a2bae456-bf4b-488a-a766-8bb8117a55ee.png",
-      description: "Dried fish, a staple protein source in many African dishes and stews."
-    },
-    {
-      id: "garri",
-      name: "Garri",
-      image: "/lovable-uploads/06d81f7b-34d0-434d-a060-a20f213032bb.png",
-      description: "Cassava flour that has been fermented and roasted, commonly used to make fufu or eba."
-    },
-    {
-      id: "egusi",
-      name: "Egusi/Melon",
-      image: "/lovable-uploads/46c1e7ab-95cf-400d-b45d-0a5764572031.png",
-      description: "Ground melon seeds used to thicken soups and add a rich, nutty flavor to dishes."
-    },
-    {
-      id: "ofada",
-      name: "Ofada Rice",
-      image: "/lovable-uploads/19fdb9d5-c004-4ac2-bf5e-1741ec7e2544.png",
-      description: "A traditional Nigerian rice variety known for its robust flavor and natural aroma."
-    },
-    {
-      id: "variety",
-      name: "Variety",
-      image: "/lovable-uploads/696dad7a-0f8d-4dd9-9d75-1a049a39be5b.png",
-      description: "Assorted spices, herbs, and ingredients used in traditional African cooking."
-    },
-    {
-      id: "palm-oil",
-      name: "Palm Oil",
-      image: "/lovable-uploads/72b36f68-4014-47c5-96e1-3995b4edcd9c.png",
-      description: "Red palm oil, an essential ingredient in West African cuisine, adding color and flavor."
-    },
-    {
-      id: "yam",
-      name: "Yam Tubers",
-      image: "/lovable-uploads/b7a26887-c963-4ad3-aeb2-e681b27a056a.png",
-      description: "Starchy tubers that are boiled, roasted, fried, or pounded into fufu."
+      id: "kuli-kuli",
+      name: "Kali-kuli",
+      image: "/lovable-uploads/6317c600-e26d-482d-b363-778bc7cec112.png",
+      description: "Crunchy groundnut snack common in West African cuisine."
     },
     {
       id: "beans",
-      name: "Beans & Grains",
-      image: "/lovable-uploads/859ab634-b5b1-479c-8b09-5eb329e1700e.png",
-      description: "Various beans, legumes, and grains that form the foundation of many African dishes."
+      name: "Beans",
+      image: "/lovable-uploads/94f271c3-e5f9-4e10-b1d9-796b15b004dc.png",
+      description: "Various beans used in traditional African stews and porridges."
+    },
+    {
+      id: "koko-yam",
+      name: "Koko-Yam",
+      image: "/lovable-uploads/c98b6122-f393-452b-8b3b-3ada787ec493.png",
+      description: "Starchy root vegetable used in soups and as a side dish."
+    },
+    {
+      id: "plantain",
+      name: "Plantain",
+      image: "/lovable-uploads/4d46f94d-a008-490a-b711-da435c1c5db7.png",
+      description: "Versatile fruit that can be fried, boiled, or roasted as a staple food."
+    },
+    {
+      id: "amala",
+      name: "Amala Powder",
+      image: "/lovable-uploads/d1e3de22-092b-4a29-ae96-63f6717da2f4.png",
+      description: "Yam flour used to make a popular Nigerian swallow food."
+    },
+    {
+      id: "tiger-nuts",
+      name: "Tiger Nuts",
+      image: "/lovable-uploads/7d207088-29c0-40d0-8e84-b1c2f16806b5.png",
+      description: "Small, sweet tubers used for snacking or making tiger nut milk."
+    },
+    {
+      id: "acha",
+      name: "Acha",
+      image: "/lovable-uploads/be9ec05d-bf4e-45ac-8c90-5b366c5a57f8.png",
+      description: "Ancient African grain with a nutty flavor, also known as fonio."
     }
   ];
 
