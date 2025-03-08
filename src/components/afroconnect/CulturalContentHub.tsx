@@ -38,8 +38,8 @@ const CulturalContentHub: React.FC = () => {
     },
     {
       id: "c4",
-      title: "Regional Delicacies: Igbo vs Yoruba Foods",
-      excerpt: "Explore the distinctive culinary traditions of two of Nigeria's major ethnic groups and their signature dishes.",
+      title: "Nigerian Cuisine: A Cultural Exploration",
+      excerpt: "Dive into the rich and diverse culinary heritage of Nigeria, from traditional recipes to modern interpretations.",
       image: "/lovable-uploads/f1af322e-09da-426d-b7d6-f0e112e437cc.png",
       category: "Cultural Cuisine",
       date: "August 8, 2023"
