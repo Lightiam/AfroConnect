@@ -35,14 +35,7 @@ const App = () => (
               <Route path="/signin" element={<SignInPage />} />
               <Route path="/signup" element={<SignUpPage />} />
               <Route path="/african-food" element={<AfricanFoodCategories />} />
-              <Route 
-                path="/vendor-profile" 
-                element={
-                  <AuthGuard requireVendor={true}>
-                    <VendorProfile />
-                  </AuthGuard>
-                } 
-              />
+              <Route path="/vendor-profile" element={<VendorProfile />} />
               <Route 
                 path="/buyer-profile" 
                 element={

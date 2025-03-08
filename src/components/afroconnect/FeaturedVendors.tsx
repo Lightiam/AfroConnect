@@ -1,5 +1,7 @@
+
 import React from "react";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 interface Vendor {
   id: string;
@@ -17,7 +19,7 @@ const FeaturedVendors: React.FC = () => {
       id: "v1", 
       name: "Mama's Delicacies", 
       country: "Nigeria", 
-      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", 
+      image: "/lovable-uploads/c8af5427-bb1e-4f30-ae4d-79adfe1868f0.png", // Updated to Savannah Flavors image
       rating: 4.8, 
       verified: true,
       productCount: 38
@@ -26,7 +28,7 @@ const FeaturedVendors: React.FC = () => {
       id: "v2", 
       name: "Ghana Spice Co.", 
       country: "Ghana", 
-      image: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", 
+      image: "/lovable-uploads/1c867b3c-085c-4480-873e-6b4c441044cf.png", // Updated to Pounded Yam image
       rating: 4.7, 
       verified: true,
       productCount: 45
@@ -89,9 +91,9 @@ const FeaturedVendors: React.FC = () => {
             <div className="p-4">
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-600">{vendor.productCount} products</span>
-                <button className="text-[#2E7D32] text-sm font-medium">
+                <Link to="/vendor-profile" className="text-[#2E7D32] text-sm font-medium">
                   Visit Store
-                </button>
+                </Link>
               </div>
             </div>
           </div>

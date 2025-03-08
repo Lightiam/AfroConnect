@@ -1,7 +1,9 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import VendorProductUpload from "./VendorProductUpload";
 
 const VendorProfile: React.FC = () => {
   // Mock data for vendor profile
@@ -149,81 +151,99 @@ const VendorProfile: React.FC = () => {
         </div>
       </div>
       
-      {/* About Section */}
+      {/* Vendor Content Tabs */}
       <div className="container mx-auto px-4 md:px-6 mt-6">
-        <div className="bg-white rounded-xl shadow-sm p-4 md:p-6">
-          <h2 className="text-lg md:text-xl font-semibold mb-4">About</h2>
-          <p className="text-gray-700">{vendorData.bio}</p>
+        <Tabs defaultValue="about" className="w-full">
+          <TabsList className="grid grid-cols-3 mb-6">
+            <TabsTrigger value="about">About</TabsTrigger>
+            <TabsTrigger value="products">Products</TabsTrigger>
+            <TabsTrigger value="add-product">Add Product</TabsTrigger>
+          </TabsList>
           
-          <div className="mt-4 pt-4 border-t border-gray-100">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <h3 className="text-sm font-medium text-gray-500">Contact Details</h3>
-                <ul className="mt-2 space-y-2">
-                  <li className="flex items-center text-gray-700">
-                    <i className="ti ti-mail mr-2" aria-hidden="true" />
-                    {vendorData.email}
-                  </li>
-                  <li className="flex items-center text-gray-700">
-                    <i className="ti ti-phone mr-2" aria-hidden="true" />
-                    {vendorData.phone}
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-sm font-medium text-gray-500">Social Media</h3>
-                <div className="flex mt-2 space-x-3">
-                  <a href={vendorData.socialLinks.facebook} className="text-gray-600 hover:text-blue-600">
-                    <i className="ti ti-brand-facebook text-xl" aria-hidden="true" />
-                  </a>
-                  <a href={vendorData.socialLinks.instagram} className="text-gray-600 hover:text-pink-600">
-                    <i className="ti ti-brand-instagram text-xl" aria-hidden="true" />
-                  </a>
-                  <a href={vendorData.socialLinks.twitter} className="text-gray-600 hover:text-blue-400">
-                    <i className="ti ti-brand-twitter text-xl" aria-hidden="true" />
-                  </a>
+          {/* About Tab */}
+          <TabsContent value="about">
+            <div className="bg-white rounded-xl shadow-sm p-4 md:p-6">
+              <h2 className="text-lg md:text-xl font-semibold mb-4">About</h2>
+              <p className="text-gray-700">{vendorData.bio}</p>
+              
+              <div className="mt-4 pt-4 border-t border-gray-100">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h3 className="text-sm font-medium text-gray-500">Contact Details</h3>
+                    <ul className="mt-2 space-y-2">
+                      <li className="flex items-center text-gray-700">
+                        <i className="ti ti-mail mr-2" aria-hidden="true" />
+                        {vendorData.email}
+                      </li>
+                      <li className="flex items-center text-gray-700">
+                        <i className="ti ti-phone mr-2" aria-hidden="true" />
+                        {vendorData.phone}
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-gray-500">Social Media</h3>
+                    <div className="flex mt-2 space-x-3">
+                      <a href={vendorData.socialLinks.facebook} className="text-gray-600 hover:text-blue-600">
+                        <i className="ti ti-brand-facebook text-xl" aria-hidden="true" />
+                      </a>
+                      <a href={vendorData.socialLinks.instagram} className="text-gray-600 hover:text-pink-600">
+                        <i className="ti ti-brand-instagram text-xl" aria-hidden="true" />
+                      </a>
+                      <a href={vendorData.socialLinks.twitter} className="text-gray-600 hover:text-blue-400">
+                        <i className="ti ti-brand-twitter text-xl" aria-hidden="true" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Products Section */}
-      <div className="container mx-auto px-4 md:px-6 mt-6">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg md:text-xl font-semibold">Products</h2>
-          <button className="text-[#355E3B] text-sm font-medium flex items-center">
-            View All
-            <i className="ti ti-chevron-right ml-1" aria-hidden="true" />
-          </button>
-        </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-          {products.map(product => (
-            <div key={product.id} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
-              <div className="relative">
-                <img 
-                  src={product.image} 
-                  alt={product.name} 
-                  className="w-full h-32 md:h-40 object-cover"
-                />
-                {product.isNew && (
-                  <Badge 
-                    variant="success" 
-                    className="absolute top-2 right-2 text-xs font-medium"
-                  >
-                    New
-                  </Badge>
-                )}
+          </TabsContent>
+          
+          {/* Products Tab */}
+          <TabsContent value="products">
+            <div className="bg-white rounded-xl shadow-sm p-4 md:p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-lg md:text-xl font-semibold">Products</h2>
+                <button className="text-[#355E3B] text-sm font-medium flex items-center">
+                  View All
+                  <i className="ti ti-chevron-right ml-1" aria-hidden="true" />
+                </button>
               </div>
-              <div className="p-3">
-                <h3 className="font-medium text-gray-800 text-sm md:text-base truncate">{product.name}</h3>
-                <p className="text-[#4caf50] font-semibold text-sm md:text-base mt-1">{product.price}</p>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                {products.map(product => (
+                  <div key={product.id} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+                    <div className="relative">
+                      <img 
+                        src={product.image} 
+                        alt={product.name} 
+                        className="w-full h-32 md:h-40 object-cover"
+                      />
+                      {product.isNew && (
+                        <Badge 
+                          variant="success" 
+                          className="absolute top-2 right-2 text-xs font-medium"
+                        >
+                          New
+                        </Badge>
+                      )}
+                    </div>
+                    <div className="p-3">
+                      <h3 className="font-medium text-gray-800 text-sm md:text-base truncate">{product.name}</h3>
+                      <p className="text-[#4caf50] font-semibold text-sm md:text-base mt-1">{product.price}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
+          </TabsContent>
+          
+          {/* Add Product Tab */}
+          <TabsContent value="add-product">
+            <VendorProductUpload />
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );
