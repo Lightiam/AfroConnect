@@ -2,22 +2,25 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { performAISearch, SearchResult } from "@/services/AISearchService";
-import { Search, Sparkles } from "lucide-react";
+import { Search, Sparkles, ShoppingCart, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SearchPage: React.FC = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const query = queryParams.get("q") || "";
+  const category = queryParams.get("category") || "";
   
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (query) {
+    const searchTerm = query || category || "";
+    if (searchTerm) {
       const fetchResults = async () => {
         setIsLoading(true);
         try {
-          const searchResults = await performAISearch(query);
+          const searchResults = await performAISearch(searchTerm);
           setResults(searchResults);
         } catch (error) {
           console.error("Search error:", error);
@@ -28,16 +31,21 @@ const SearchPage: React.FC = () => {
       
       fetchResults();
     }
-  }, [query]);
+  }, [query, category]);
+
+  const displayTerm = query || category || "";
 
   return (
     <div className="container mx-auto py-4 md:py-8 px-3 md:px-4">
       <div className="flex items-center mb-4 md:mb-6">
+        <Link to="/" className="mr-2 md:mr-3">
+          <ArrowLeft className="text-gray-700" size={20} />
+        </Link>
         <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#F2FCE2] flex items-center justify-center mr-2 md:mr-3">
           <Search className="text-[#355E3B]" size={16} />
         </div>
-        <h1 className="text-xl md:text-2xl font-bold text-gray-800">
-          {query ? `Search results for "${query}"` : "Search Results"}
+        <h1 className="text-xl md:text-2xl font-bold text-gray-800 truncate">
+          {displayTerm ? `Search results for "${displayTerm}"` : "Search Results"}
         </h1>
       </div>
 
@@ -68,7 +76,7 @@ const SearchPage: React.FC = () => {
                 <span className="font-bold text-[#355E3B] text-sm md:text-base">${result.price}</span>
               </div>
               <button className="w-full mt-3 md:mt-4 bg-[#355E3B] text-white py-1.5 md:py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center text-sm md:text-base">
-                <Sparkles size={14} className="mr-1 md:mr-2" />
+                <ShoppingCart size={14} className="mr-1 md:mr-2" />
                 Add to Cart
               </button>
             </div>
@@ -81,7 +89,7 @@ const SearchPage: React.FC = () => {
           </div>
           <h2 className="text-lg md:text-xl font-medium text-gray-800 mb-1 md:mb-2">No results found</h2>
           <p className="text-sm md:text-base text-gray-600">
-            We couldn't find any products matching "{query}". Try different keywords or categories.
+            We couldn't find any products matching "{displayTerm}". Try different keywords or categories.
           </p>
         </div>
       )}

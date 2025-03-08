@@ -1,7 +1,7 @@
 
 import React from "react";
 import { SearchResult } from "@/services/AISearchService";
-import { Sparkles, X } from "lucide-react";
+import { Sparkles, X, ShoppingCart } from "lucide-react";
 
 interface SearchResultsProps {
   results: SearchResult[];
@@ -63,6 +63,10 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results, isLoading, onClo
                 </div>
               </div>
             </div>
+            <button className="mt-2 w-full text-xs md:text-sm bg-[#355E3B] text-white rounded-lg py-1 px-2 flex items-center justify-center">
+              <ShoppingCart size={12} className="mr-1" />
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>

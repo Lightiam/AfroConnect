@@ -17,6 +17,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import SignInPage from "./pages/SignIn";
 import SignUpPage from "./pages/SignUp";
 import AuthGuard from "./components/auth/AuthGuard";
+import AfricanFoodCategories from "./components/afroconnect/AfricanFoodCategories";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
               <Route path="/search" element={<SearchPage />} />
               <Route path="/signin" element={<SignInPage />} />
               <Route path="/signup" element={<SignUpPage />} />
+              <Route path="/african-food" element={<AfricanFoodCategories />} />
               <Route 
                 path="/vendor-profile" 
                 element={
