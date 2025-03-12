@@ -88,14 +88,42 @@ export const performAISearch = async (query: string): Promise<SearchResult[]> =>
       category: "Grains",
       price: 11.99,
       image: "/lovable-uploads/be9ec05d-bf4e-45ac-8c90-5b366c5a57f8.png"
+    },
+    {
+      id: "10",
+      name: "Palm Oil",
+      description: "Traditional red oil used in African cooking",
+      category: "Oils",
+      price: 14.99,
+      image: "/lovable-uploads/72b36f68-4014-47c5-96e1-3995b4edcd9c.png"
+    },
+    {
+      id: "11",
+      name: "Jollof Rice Mix",
+      description: "Premixed spices for making the perfect jollof rice",
+      category: "Spices",
+      price: 8.99,
+      image: "/lovable-uploads/859ab634-b5b1-479c-8b09-5eb329e1700e.png"
+    },
+    {
+      id: "12",
+      name: "Shea Butter",
+      description: "Pure African shea butter for cooking and skin care",
+      category: "Butter",
+      price: 15.99,
+      image: "/lovable-uploads/886cd2bb-3e33-46b7-af02-952c2938e6fd.png"
     }
   ];
   
   // Filter results based on query (case insensitive)
+  const searchTerms = query.toLowerCase().split(" ");
+  
   return results.filter(item => 
-    item.name.toLowerCase().includes(query.toLowerCase()) || 
-    item.description.toLowerCase().includes(query.toLowerCase()) ||
-    item.category.toLowerCase().includes(query.toLowerCase())
+    searchTerms.some(term => 
+      item.name.toLowerCase().includes(term) || 
+      item.description.toLowerCase().includes(term) ||
+      item.category.toLowerCase().includes(term)
+    )
   );
 };
 
@@ -104,7 +132,7 @@ export const performVoiceSearch = async (audioBlob: Blob): Promise<string> => {
   
   // In a real app, this would send the audio to a speech-to-text service
   // For now, we'll simulate a successful transcription after a delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
+  await new Promise(resolve => setTimeout(resolve, 1500));
   
   // Return a mock transcription result related to African food ingredients
   const mockTranscriptions = [
@@ -112,7 +140,12 @@ export const performVoiceSearch = async (audioBlob: Blob): Promise<string> => {
     "crayfish",
     "kali-kuli",
     "beans",
-    "koko-yam"
+    "koko-yam",
+    "plantain",
+    "palm oil",
+    "jollof rice",
+    "shea butter",
+    "tiger nuts"
   ];
   
   return mockTranscriptions[Math.floor(Math.random() * mockTranscriptions.length)];

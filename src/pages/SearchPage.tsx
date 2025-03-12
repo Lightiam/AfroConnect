@@ -1,18 +1,42 @@
 
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { performAISearch, SearchResult } from "@/services/AISearchService";
 import { Search, Sparkles, ShoppingCart, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import SearchBar from "@/components/grocery/SearchBar";
+import { useCart } from "@/contexts/CartContext";
+import { toast } from "sonner";
 
 const SearchPage: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const queryParams = new URLSearchParams(location.search);
   const query = queryParams.get("q") || "";
   const category = queryParams.get("category") || "";
   
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const { addItem } = useCart();
+
+  const handleSearch = (searchQuery: string) => {
+    navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+  };
+
+  const handleAddToCart = (result: SearchResult) => {
+    addItem({
+      id: result.id,
+      name: result.name,
+      price: result.price,
+      quantity: 1,
+      image: result.image || "",
+      vendor: result.category
+    });
+
+    toast("Added to cart", {
+      description: `${result.name} has been added to your cart`
+    });
+  };
 
   useEffect(() => {
     const searchTerm = query || category || "";
@@ -24,6 +48,9 @@ const SearchPage: React.FC = () => {
           setResults(searchResults);
         } catch (error) {
           console.error("Search error:", error);
+          toast("Search failed", {
+            description: "Please try again later",
+          });
         } finally {
           setIsLoading(false);
         }
@@ -48,6 +75,8 @@ const SearchPage: React.FC = () => {
           {displayTerm ? `Search results for "${displayTerm}"` : "Search Results"}
         </h1>
       </div>
+
+      <SearchBar onSearch={handleSearch} placeholder="Search for more products..." />
 
       {isLoading ? (
         <div className="flex justify-center items-center py-12 md:py-20">
@@ -75,7 +104,10 @@ const SearchPage: React.FC = () => {
                 </span>
                 <span className="font-bold text-[#355E3B] text-sm md:text-base">${result.price}</span>
               </div>
-              <button className="w-full mt-3 md:mt-4 bg-[#355E3B] text-white py-1.5 md:py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center text-sm md:text-base">
+              <button 
+                className="w-full mt-3 md:mt-4 bg-[#355E3B] text-white py-1.5 md:py-2 rounded-lg hover:bg-opacity-90 transition-colors flex items-center justify-center text-sm md:text-base"
+                onClick={() => handleAddToCart(result)}
+              >
                 <ShoppingCart size={14} className="mr-1 md:mr-2" />
                 Add to Cart
               </button>
