@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    // Removing the componentTagger plugin since it's causing ESM compatibility issues
+    // Removing the componentTagger plugin since it's causing installation issues
   ],
   resolve: {
     alias: {
