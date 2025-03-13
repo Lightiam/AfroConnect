@@ -115,16 +115,43 @@ export const performAISearch = async (query: string): Promise<SearchResult[]> =>
     }
   ];
   
-  // Filter results based on query (case insensitive)
-  const searchTerms = query.toLowerCase().split(" ");
+  // Improved search algorithm - normalize query and search terms
+  // Remove special characters, normalize spaces, and convert to lowercase
+  const normalizedQuery = query.toLowerCase()
+    .replace(/[^\w\s]/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim();
   
-  return results.filter(item => 
-    searchTerms.some(term => 
-      item.name.toLowerCase().includes(term) || 
-      item.description.toLowerCase().includes(term) ||
-      item.category.toLowerCase().includes(term)
-    )
-  );
+  const searchTerms = normalizedQuery.split(' ').filter(term => term.length > 1);
+  
+  if (searchTerms.length === 0) {
+    return results.slice(0, 4); // Return a few default results if query is too short
+  }
+  
+  // Score-based matching algorithm
+  return results
+    .map(item => {
+      let score = 0;
+      const itemName = item.name.toLowerCase();
+      const itemDesc = item.description.toLowerCase();
+      const itemCat = item.category.toLowerCase();
+      
+      searchTerms.forEach(term => {
+        // Exact match in name is highest priority
+        if (itemName === term) score += 10;
+        // Partial match in name
+        else if (itemName.includes(term)) score += 5;
+        // Word match in description
+        if (itemDesc.includes(term)) score += 3;
+        // Category match
+        if (itemCat.includes(term)) score += 4;
+      });
+      
+      return { ...item, score };
+    })
+    .filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .map(({ score, ...item }) => item); // Remove the score before returning
 };
 
 export const performVoiceSearch = async (audioBlob: Blob, language = 'en-US'): Promise<string> => {
@@ -183,7 +210,31 @@ export const performVoiceSearch = async (audioBlob: Blob, language = 'en-US'): P
       "wali wa jollof",
       "siagi ya shea",
       "karanga za chui"
-    ]
+    ],
+    'yo-NG': [
+      "ẹyọ ilẹ̀ Áfíríkà",
+      "ọ̀dọ́",
+      "kali-kuli",
+      "ẹ̀wà",
+      "koko-yam",
+      "ọ̀gẹ̀dẹ̀",
+      "epo pupa",
+      "jollof iresi",
+      "òróró shea",
+      "ẹyin ẹkun"
+    ],
+    'ha-NG': [
+      "kayan yaji na Afrika",
+      "kifi",
+      "kali-kuli",
+      "wake",
+      "koko-yam",
+      "ayaba",
+      "man ja",
+      "shinkafan jollof",
+      "man shea",
+      "gujiya"
+    ],
   };
   
   // Get transcriptions for the specified language or fall back to English

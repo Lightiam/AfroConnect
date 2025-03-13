@@ -5,7 +5,7 @@ import { performVoiceSearch } from '@/services/AISearchService';
 
 interface UseVoiceSearchProps {
   onTranscriptionComplete: (text: string) => void;
-  language?: string; // Add language parameter
+  language?: string;
 }
 
 export const useVoiceSearch = ({ onTranscriptionComplete, language = 'en-US' }: UseVoiceSearchProps) => {
@@ -26,16 +26,38 @@ export const useVoiceSearch = ({ onTranscriptionComplete, language = 'en-US' }: 
         
         recognition.lang = language;
         recognition.continuous = false;
-        recognition.interimResults = false;
+        // Enable interim results to improve accuracy by allowing the API to refine results
+        recognition.interimResults = true;
+        // Increase maxAlternatives to get more potential matches
+        recognition.maxAlternatives = 5;
+        
+        let finalTranscript = '';
         
         recognition.onresult = (event) => {
-          const transcript = event.results[0][0].transcript;
-          onTranscriptionComplete(transcript);
-          setIsListening(false);
+          let interimTranscript = '';
           
-          toast("Voice recognized", {
-            description: `You said: "${transcript}"`,
-          });
+          // Process results to get the most accurate transcript
+          for (let i = event.resultIndex; i < event.results.length; i++) {
+            const transcript = event.results[i][0].transcript;
+            if (event.results[i].isFinal) {
+              finalTranscript += transcript;
+            } else {
+              interimTranscript += transcript;
+            }
+          }
+          
+          // Only use final transcript if available, otherwise use interim
+          const textToUse = finalTranscript || interimTranscript;
+          
+          if (textToUse && event.results[0].isFinal) {
+            console.log('Final transcript:', textToUse);
+            onTranscriptionComplete(textToUse);
+            setIsListening(false);
+            
+            toast("Voice recognized", {
+              description: `You said: "${textToUse}"`,
+            });
+          }
         };
         
         recognition.onerror = (event) => {
@@ -57,12 +79,20 @@ export const useVoiceSearch = ({ onTranscriptionComplete, language = 'en-US' }: 
       }
       
       // Fallback to MediaRecorder if SpeechRecognition is not supported
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({ 
+        audio: { 
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true
+        } 
+      });
       
       setIsListening(true);
       audioChunksRef.current = [];
       
-      const mediaRecorder = new MediaRecorder(stream);
+      const mediaRecorder = new MediaRecorder(stream, {
+        mimeType: 'audio/webm;codecs=opus'
+      });
       mediaRecorderRef.current = mediaRecorder;
       
       mediaRecorder.ondataavailable = (event) => {
@@ -72,11 +102,12 @@ export const useVoiceSearch = ({ onTranscriptionComplete, language = 'en-US' }: 
       };
       
       mediaRecorder.onstop = async () => {
-        const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/wav' });
+        const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm;codecs=opus' });
         
         try {
           setIsProcessing(true);
           const transcription = await performVoiceSearch(audioBlob, language);
+          console.log('Server transcription:', transcription);
           onTranscriptionComplete(transcription);
         } catch (error) {
           console.error("Voice processing error:", error);
@@ -90,6 +121,7 @@ export const useVoiceSearch = ({ onTranscriptionComplete, language = 'en-US' }: 
         stream.getTracks().forEach(track => track.stop());
       };
       
+      // Record for longer to get more accurate transcription
       mediaRecorder.start();
       
       toast("Listening...", {

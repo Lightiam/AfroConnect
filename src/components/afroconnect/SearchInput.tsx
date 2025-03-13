@@ -36,10 +36,25 @@ const SearchInput: React.FC<SearchInputProps> = ({
           <button
             type="button"
             onClick={toggleVoiceSearch}
-            className={`px-2 ${isListening ? 'text-red-500' : 'text-gray-500'} hover:text-[#355E3B] transition-colors`}
+            className={`px-2 ${
+              isListening 
+                ? 'text-red-500 animate-pulse' 
+                : 'text-gray-500'
+            } hover:text-[#355E3B] transition-colors`}
             title={isListening ? "Stop voice search" : "Search with your voice"}
+            aria-label={isListening ? "Stop voice search" : "Search with your voice"}
           >
-            {isListening ? <MicOff size={18} /> : <Mic size={18} />}
+            {isListening ? (
+              <div className="relative">
+                <MicOff size={18} />
+                <span className="absolute -top-1 -right-1 flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                </span>
+              </div>
+            ) : (
+              <Mic size={18} />
+            )}
           </button>
           <button
             type="submit"
