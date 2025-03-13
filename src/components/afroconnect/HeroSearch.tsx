@@ -7,12 +7,14 @@ import SearchInput from "./SearchInput";
 import SearchKeywords from "./SearchKeywords";
 import HeroSection from "./HeroSection";
 import { useVoiceSearch } from "@/hooks/useVoiceSearch";
+import LanguageSelector from "./LanguageSelector";
 
 const HeroSearch: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("en-US");
 
   const handleTranscriptionComplete = (transcription: string) => {
     setSearchQuery(transcription);
@@ -20,7 +22,8 @@ const HeroSearch: React.FC = () => {
   };
 
   const { isListening, toggleVoiceSearch } = useVoiceSearch({
-    onTranscriptionComplete: handleTranscriptionComplete
+    onTranscriptionComplete: handleTranscriptionComplete,
+    language: selectedLanguage
   });
 
   const performSearch = async (query: string) => {
@@ -65,9 +68,20 @@ const HeroSearch: React.FC = () => {
     performSearch(keyword);
   };
 
+  const handleLanguageChange = (language: string) => {
+    setSelectedLanguage(language);
+  };
+
   return (
     <HeroSection>
       <div className="relative">
+        <div className="max-w-2xl mx-auto w-full mb-4">
+          <LanguageSelector 
+            selectedLanguage={selectedLanguage} 
+            onLanguageChange={handleLanguageChange} 
+          />
+        </div>
+        
         <SearchInput 
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}

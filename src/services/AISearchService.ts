@@ -127,26 +127,67 @@ export const performAISearch = async (query: string): Promise<SearchResult[]> =>
   );
 };
 
-export const performVoiceSearch = async (audioBlob: Blob): Promise<string> => {
-  console.log("Processing voice input...");
+export const performVoiceSearch = async (audioBlob: Blob, language = 'en-US'): Promise<string> => {
+  console.log(`Processing voice input with language: ${language}...`);
   
-  // In a real app, this would send the audio to a speech-to-text service
+  // In a real app, this would send the audio to a speech-to-text service with language support
   // For now, we'll simulate a successful transcription after a delay
   await new Promise(resolve => setTimeout(resolve, 1500));
   
   // Return a mock transcription result related to African food ingredients
-  const mockTranscriptions = [
-    "african spices",
-    "crayfish",
-    "kali-kuli",
-    "beans",
-    "koko-yam",
-    "plantain",
-    "palm oil",
-    "jollof rice",
-    "shea butter",
-    "tiger nuts"
-  ];
+  const mockTranscriptions: Record<string, string[]> = {
+    'en-US': [
+      "african spices",
+      "crayfish",
+      "kali-kuli",
+      "beans",
+      "koko-yam",
+      "plantain",
+      "palm oil",
+      "jollof rice",
+      "shea butter",
+      "tiger nuts"
+    ],
+    'fr-FR': [
+      "épices africaines",
+      "écrevisses",
+      "kali-kuli",
+      "haricots",
+      "koko-yam",
+      "plantain",
+      "huile de palme",
+      "riz jollof",
+      "beurre de karité",
+      "noix tigrées"
+    ],
+    'es-ES': [
+      "especias africanas",
+      "cangrejos de río",
+      "kali-kuli",
+      "frijoles",
+      "koko-yam",
+      "plátano",
+      "aceite de palma",
+      "arroz jollof",
+      "manteca de karité",
+      "nueces tigre"
+    ],
+    'sw-KE': [
+      "viungo vya afrika",
+      "kamba",
+      "kali-kuli",
+      "maharagwe",
+      "koko-yam",
+      "ndizi",
+      "mafuta ya mawese",
+      "wali wa jollof",
+      "siagi ya shea",
+      "karanga za chui"
+    ]
+  };
   
-  return mockTranscriptions[Math.floor(Math.random() * mockTranscriptions.length)];
+  // Get transcriptions for the specified language or fall back to English
+  const transcriptions = mockTranscriptions[language] || mockTranscriptions['en-US'];
+  
+  return transcriptions[Math.floor(Math.random() * transcriptions.length)];
 };
