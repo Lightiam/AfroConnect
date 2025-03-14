@@ -27,10 +27,11 @@ const SearchInput: React.FC<SearchInputProps> = ({
             </div>
             <input
               type="text"
-              placeholder="Search for African food products..."
+              placeholder={isListening ? "Listening..." : "Search for African food products..."}
               className="w-full py-3 md:py-4 pl-10 md:pl-14 pr-2 md:pr-4 outline-none text-sm md:text-base"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              readOnly={isListening}
             />
           </div>
           <button

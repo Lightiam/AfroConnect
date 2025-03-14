@@ -1,4 +1,3 @@
-
 import { useState, useRef, useCallback } from 'react';
 import { toast } from 'sonner';
 import { performVoiceSearch } from '@/services/AISearchService';
@@ -51,6 +50,9 @@ export const useVoiceSearch = ({ onTranscriptionComplete, language = 'en-US' }: 
           
           if (textToUse && event.results[0].isFinal) {
             console.log('Final transcript:', textToUse);
+            
+            // Only call onTranscriptionComplete when we have a final result
+            // This prevents pre-populating with interim results
             onTranscriptionComplete(textToUse);
             setIsListening(false);
             
@@ -139,6 +141,7 @@ export const useVoiceSearch = ({ onTranscriptionComplete, language = 'en-US' }: 
   const stopVoiceSearch = useCallback(() => {
     if (recognitionRef.current) {
       recognitionRef.current.stop();
+      recognitionRef.current = null;
       setIsListening(false);
       return;
     }
