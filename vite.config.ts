@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    // Removing the componentTagger plugin since it's causing installation issues
+    // Note: lovable-tagger is temporarily disabled due to installation issues
   ],
   resolve: {
     alias: {
