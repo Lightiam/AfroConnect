@@ -8,6 +8,7 @@ interface SearchInputProps {
   isListening: boolean;
   toggleVoiceSearch: () => void;
   handleSearch: (e: React.FormEvent) => void;
+  isSearching?: boolean;
 }
 
 const SearchInput: React.FC<SearchInputProps> = ({
@@ -16,6 +17,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   isListening,
   toggleVoiceSearch,
   handleSearch,
+  isSearching = false,
 }) => {
   return (
     <form onSubmit={handleSearch} className="max-w-2xl mx-auto w-full">
@@ -59,10 +61,20 @@ const SearchInput: React.FC<SearchInputProps> = ({
           </button>
           <button
             type="submit"
-            className="bg-[#355E3B] text-white px-3 md:px-6 py-3 md:py-4 font-medium hover:bg-opacity-90 transition-colors flex items-center text-sm md:text-base"
+            className={`bg-[#355E3B] text-white px-3 md:px-6 py-3 md:py-4 font-medium hover:bg-opacity-90 transition-colors flex items-center text-sm md:text-base ${isSearching ? 'opacity-70 cursor-not-allowed' : ''}`}
+            disabled={isSearching}
           >
-            <Sparkles size={16} className="mr-1 md:mr-2" />
-            Search
+            {isSearching ? (
+              <>
+                <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full mr-1 md:mr-2"></div>
+                Searching...
+              </>
+            ) : (
+              <>
+                <Sparkles size={16} className="mr-1 md:mr-2" />
+                Search
+              </>
+            )}
           </button>
         </div>
       </div>

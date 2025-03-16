@@ -1,7 +1,7 @@
 
 import React from "react";
 import { SearchResult } from "@/services/AISearchService";
-import { Sparkles, X, ShoppingCart } from "lucide-react";
+import { Sparkles, X, ShoppingCart, Search } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
 
@@ -9,9 +9,15 @@ interface SearchResultsProps {
   results: SearchResult[];
   isLoading: boolean;
   onClose: () => void;
+  searchQuery?: string;
 }
 
-const SearchResults: React.FC<SearchResultsProps> = ({ results, isLoading, onClose }) => {
+const SearchResults: React.FC<SearchResultsProps> = ({ 
+  results, 
+  isLoading, 
+  onClose,
+  searchQuery = ""
+}) => {
   const { addItem } = useCart();
 
   const handleAddToCart = (result: SearchResult) => {
@@ -41,7 +47,31 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results, isLoading, onClo
   }
 
   if (results.length === 0) {
-    return null;
+    return (
+      <div className="absolute top-full left-0 right-0 bg-white rounded-b-xl shadow-lg mt-1 z-10">
+        <div className="flex justify-between items-center p-2 md:p-3 border-b">
+          <h3 className="font-medium text-gray-700 flex items-center text-sm md:text-base">
+            <Search size={14} className="text-[#355E3B] mr-1 md:mr-2" />
+            Search Results
+          </h3>
+          <button 
+            onClick={onClose}
+            className="text-gray-500 hover:text-gray-700"
+          >
+            <X size={14} aria-hidden="true" />
+          </button>
+        </div>
+        <div className="p-6 text-center">
+          <div className="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-gray-100">
+            <Search className="text-gray-400" size={24} />
+          </div>
+          <h4 className="text-gray-700 font-medium mb-2">No results found for "{searchQuery}"</h4>
+          <p className="text-gray-500 text-sm max-w-xs mx-auto">
+            Try using different keywords, checking your spelling, or searching for related terms.
+          </p>
+        </div>
+      </div>
+    );
   }
 
   return (
