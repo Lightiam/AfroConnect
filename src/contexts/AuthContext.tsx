@@ -59,14 +59,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const signIn = async (email: string, password: string): Promise<boolean> => {
     try {
       setIsLoading(true);
-      
+
       // In production, make a real API call
       const response = await APIService.post<AuthResponse>('/api/auth/signin', { email, password });
-      
+
       if (response.success && response.data) {
         // Type assertion to ensure TypeScript knows the data structure
         const authData = response.data as AuthResponse;
-        
+
         // Store the user with the JWT token
         const authenticatedUser: User = {
           id: authData.id,
@@ -76,24 +76,24 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           avatar: authData.avatar,
           token: authData.token // Save the JWT token
         };
-        
+
         setUser(authenticatedUser);
         localStorage.setItem('afroconnect-user', JSON.stringify(authenticatedUser));
-        
+
         toast({
           title: "Sign in successful",
           description: `Welcome back, ${authenticatedUser.name}!`,
         });
-        
+
         return true;
       }
-      
+
       toast({
         title: "Sign in failed",
         description: response.message || "Invalid credentials. Please try again.",
         variant: "destructive",
       });
-      
+
       return false;
     } catch (error) {
       toast({
@@ -115,7 +115,35 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   ): Promise<boolean> => {
     try {
       setIsLoading(true);
-      
+
+      // Validate input before making API call
+      if (!name.trim()) {
+        toast({
+          title: "Sign up failed",
+          description: "Please enter your name.",
+          variant: "destructive",
+        });
+        return false;
+      }
+
+      if (!email.trim() || !email.includes('@')) {
+        toast({
+          title: "Sign up failed",
+          description: "Please enter a valid email address.",
+          variant: "destructive",
+        });
+        return false;
+      }
+
+      if (password.length < 6) {
+        toast({
+          title: "Sign up failed",
+          description: "Password must be at least 6 characters long.",
+          variant: "destructive",
+        });
+        return false;
+      }
+
       // In production, make a real API call
       const response = await APIService.post<AuthResponse>('/api/auth/signup', {
         name,
@@ -123,11 +151,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         password,
         isVendor
       });
-      
+
       if (response.success && response.data) {
         // Type assertion to ensure TypeScript knows the data structure
         const authData = response.data as AuthResponse;
-        
+
         // Store the user with the JWT token
         const newUser: User = {
           id: authData.id,
@@ -137,29 +165,66 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           avatar: authData.avatar,
           token: authData.token // Save the JWT token
         };
-        
+
         setUser(newUser);
         localStorage.setItem('afroconnect-user', JSON.stringify(newUser));
-        
+
         toast({
           title: "Sign up successful",
           description: `Welcome to AfroConnect, ${name}!`,
         });
-        
+
         return true;
       }
-      
+
+      // Handle specific error messages from the API
+      let errorMessage = "Registration failed. Please try again.";
+
+      if (response.message) {
+        // Check for common error scenarios
+        if (response.message.toLowerCase().includes('email') && response.message.toLowerCase().includes('exist')) {
+          errorMessage = "This email is already registered. Please use a different email or sign in.";
+        } else if (response.message.toLowerCase().includes('password')) {
+          errorMessage = "Password doesn't meet requirements. Please use a stronger password.";
+        } else {
+          errorMessage = response.message;
+        }
+      }
+
       toast({
         title: "Sign up failed",
-        description: response.message || "Registration failed. Please try again.",
+        description: errorMessage,
         variant: "destructive",
       });
-      
+
       return false;
     } catch (error) {
+      console.error("Sign up error:", error);
+
+      // Extract more detailed error information
+      let errorMessage = "There was a problem creating your account. Please try again.";
+
+      if (error instanceof Error) {
+        console.error("Error details:", {
+          name: error.name,
+          message: error.message,
+          stack: error.stack
+        });
+
+        // Check for network errors
+        if (error.name === 'TypeError' && error.message.includes('NetworkError')) {
+          errorMessage = "Network error. Please check your internet connection and try again.";
+        } else if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
+          errorMessage = "Unable to connect to the server. Please try again later.";
+        } else {
+          errorMessage = `Error: ${error.name} - ${error.message}`;
+        }
+      }
+
+      // Show the error message to the user
       toast({
         title: "Sign up failed",
-        description: "An error occurred. Please try again.",
+        description: errorMessage,
         variant: "destructive",
       });
       return false;
@@ -173,7 +238,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     APIService.post('/api/auth/signout').catch(err => {
       console.error('Error signing out:', err);
     });
-    
+
     setUser(null);
     localStorage.removeItem('afroconnect-user');
     toast({
