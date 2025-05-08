@@ -144,7 +144,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         return false;
       }
 
-      // In production, make a real API call
+      // Make the API call - the APIService will handle mock implementation if needed
       const response = await APIService.post<AuthResponse>('/api/auth/signup', {
         name,
         email,
